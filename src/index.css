@@ -2,80 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* A1 Engineering Design System - Professional Engineering Color Palette */
+/* A1 Engineering Design System - Orange Theme */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 215 13% 34%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 215 13% 34%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 215 13% 34%;
 
-    /* Professional Blue Primary */
-    --primary: 217 91% 24%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 217 91% 34%;
-    --primary-dark: 217 91% 18%;
+    /* Orange Primary from original site */
+    --primary: 30 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 35 100% 65%;
+    --primary-dark: 25 100% 55%;
 
-    /* Engineering Gray Secondary */
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 240 6% 10%;
+    /* Gray Secondary */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 13% 34%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 13% 50%;
 
-    --accent: 217 91% 24%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 30 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 217 91% 24%;
+    --border: 210 20% 90%;
+    --input: 210 20% 95%;
+    --ring: 30 100% 60%;
 
     --radius: 0.5rem;
 
-    /* A1 Engineering Brand Colors */
-    --brand-blue: 217 91% 24%;
-    --brand-blue-light: 217 91% 34%;
-    --brand-blue-dark: 217 91% 18%;
-    --brand-gray: 240 6% 10%;
-    --brand-gray-light: 220 14% 96%;
+    /* A1 Engineering Brand Colors - Orange Theme */
+    --brand-orange: 30 100% 60%;
+    --brand-orange-light: 35 100% 65%;
+    --brand-orange-dark: 25 100% 55%;
+    --brand-gray: 215 13% 34%;
+    --brand-gray-light: 210 20% 95%;
     
     /* Professional Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 24%) 0%, hsl(217 91% 34%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 18%) 0%, hsl(217 91% 24%) 50%, hsl(217 91% 34%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(30 100% 60%) 0%, hsl(35 100% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(25 100% 55%) 0%, hsl(30 100% 60%) 50%, hsl(35 100% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
     
     /* Professional Shadows */
-    --shadow-card: 0 4px 6px -1px hsl(240 5% 64% / 0.1), 0 2px 4px -1px hsl(240 5% 64% / 0.06);
-    --shadow-card-hover: 0 20px 25px -5px hsl(240 5% 64% / 0.1), 0 10px 10px -5px hsl(240 5% 64% / 0.04);
-    --shadow-hero: 0 25px 50px -12px hsl(217 91% 24% / 0.25);
+    --shadow-card: 0 4px 6px -1px hsl(215 13% 34% / 0.1), 0 2px 4px -1px hsl(215 13% 34% / 0.06);
+    --shadow-card-hover: 0 20px 25px -5px hsl(215 13% 34% / 0.1), 0 10px 10px -5px hsl(215 13% 34% / 0.04);
+    --shadow-hero: 0 25px 50px -12px hsl(30 100% 60% / 0.25);
     
     /* Engineering Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 30 100% 60%;
   }
 
   .dark {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,54 +22,37 @@ const Header = () => {
   };
 
   const navigationItems = [
-    { label: 'Início', href: '#inicio' },
+    { label: 'Home', href: '#inicio' },
+    { label: 'Sobre Nós', href: '#sobre' },
     { label: 'Serviços', href: '#servicos' },
-    { label: 'Sobre', href: '#sobre' },
+    { label: 'Galeria', href: '#galeria' },
+    { label: 'Blog', href: '#blog' },
+    { label: 'Avaliações', href: '#avaliacoes' },
     { label: 'Contato', href: '#contato' },
   ];
 
   return (
-    <>
-      {/* Top Contact Bar */}
-      <div className="bg-primary text-primary-foreground py-2 px-4 text-sm">
-        <div className="container mx-auto flex flex-wrap justify-between items-center gap-4">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone size={14} />
-              <span>(11) 9999-9999</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={14} />
-              <span>contato@a1engenharia.com.br</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin size={14} />
-            <span>São Paulo - SP</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <header 
-        className={`sticky top-0 z-50 w-full transition-smooth ${
-          isScrolled 
-            ? 'bg-background/95 backdrop-blur-sm shadow-card border-b' 
-            : 'bg-background'
-        }`}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A1</span>
+    <header 
+      className={`sticky top-0 z-50 w-full transition-smooth ${
+        isScrolled 
+          ? 'bg-background/95 backdrop-blur-sm shadow-card border-b' 
+          : 'bg-background'
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 relative">
+              <div className="w-full h-full gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-2xl">A1</span>
               </div>
-              <div>
-                <h1 className="font-bold text-lg text-primary">A1 Engenharia</h1>
-                <p className="text-xs text-muted-foreground">Segurança Ocupacional</p>
+              <div className="absolute -bottom-1 -right-1 text-xs font-bold text-primary">
+                ENGENHARIA E<br />
+                SEGURANÇA OCUPACIONAL
               </div>
             </div>
+          </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
@@ -84,21 +67,15 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-4">
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection('contato')}
-              >
-                Solicitar Orçamento
-              </Button>
-              <Button
-                className="gradient-primary text-white"
-                onClick={() => scrollToSection('contato')}
-              >
-                Fale Conosco
-              </Button>
-            </div>
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <Button
+              className="gradient-primary text-white font-medium"
+              onClick={() => scrollToSection('contato')}
+            >
+              Solicite um Orçamento
+            </Button>
+          </div>
 
             {/* Mobile Menu */}
             <Sheet>
@@ -151,8 +128,8 @@ const Header = () => {
             </Sheet>
           </div>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 

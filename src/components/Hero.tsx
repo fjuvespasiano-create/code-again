@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Users, ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroEngineers from '@/assets/hero-engineers.png';
 
 const Hero = () => {
@@ -10,88 +10,38 @@ const Hero = () => {
     }
   };
 
-  const stats = [
-    { icon: Shield, label: 'Anos de Experiência', value: '15+' },
-    { icon: Award, label: 'Projetos Concluídos', value: '500+' },
-    { icon: Users, label: 'Conformidade NR', value: '100%' },
-  ];
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroEngineers} 
-          alt="Engenheiros profissionais trabalhando com equipamentos de segurança em ambiente industrial" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 gradient-hero opacity-90"></div>
-        <div className="absolute inset-0 hero-pattern"></div>
-      </div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          {/* Main Heading */}
-          <div className="fade-in">
-            <h1 className="heading-display mb-6">
-              <span className="block">Soluções Completas em</span>
-              <span className="block text-gradient">Engenharia e Segurança</span>
+    <section id="inicio" className="py-16 md:py-24 bg-gradient-to-b from-muted/40 to-background">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left content */}
+          <div>
+            <h1 className="heading-display text-foreground mb-6">
+              Soluções Completas em <span className="text-primary">Engenharia</span> e <span className="text-primary">Segurança</span>
             </h1>
-            
-            <p className="body-lg mb-8 text-gray-100 max-w-2xl mx-auto">
-              Consultoria, projetos e treinamentos especializados para empresas de médio e grande porte. 
+            <p className="body-lg text-muted-foreground mb-8">
+              Consultoria, projetos e treinamentos especializados para empresas de médio e grande porte.
               Protegemos vidas e otimizamos processos industriais com qualidade técnica e segurança.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button className="gradient-primary text-white font-semibold px-8 py-6 text-lg" onClick={() => scrollToSection('contato')}>
+                Solicite seu Orçamento
+              </Button>
+              <Button variant="outline" className="px-8 py-6 text-lg" onClick={() => scrollToSection('servicos')}>
+                Nossos Serviços
+              </Button>
+            </div>
           </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 slide-up">
-            <Button
-              size="lg"
-              className="bg-white text-primary hover:bg-gray-100 shadow-hero text-lg px-8 py-6"
-              onClick={() => scrollToSection('contato')}
-            >
-              Solicite seu Orçamento
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10 text-lg px-8 py-6"
-              onClick={() => scrollToSection('servicos')}
-            >
-              Nossos Serviços
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto fade-in">
-            {stats.map((stat, index) => (
-              <div 
-                key={index} 
-                className="text-center"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
-                  <stat.icon className="h-8 w-8 text-white" />
-                </div>
-                <div className="heading-lg mb-2">{stat.value}</div>
-                <div className="text-gray-200">{stat.label}</div>
-              </div>
-            ))}
+          {/* Right image */}
+          <div className="relative">
+            <img
+              src={heroEngineers}
+              alt="Engenheiros profissionais trabalhando com equipamentos de segurança em ambiente industrial"
+              className="w-full h-auto rounded-xl shadow-2xl"
+            />
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <button
-          onClick={() => scrollToSection('sobre')}
-          className="animate-bounce text-white hover:text-gray-300 transition-smooth"
-        >
-          <ChevronDown className="h-8 w-8" />
-        </button>
       </div>
     </section>
   );

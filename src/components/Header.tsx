@@ -77,56 +77,55 @@ const Header = () => {
             </Button>
           </div>
 
-            {/* Mobile Menu */}
-            <Sheet>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
-                <div className="flex flex-col gap-6 pt-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">A1</span>
-                    </div>
-                    <div>
-                      <h2 className="font-bold text-lg text-primary">A1 Engenharia</h2>
-                      <p className="text-xs text-muted-foreground">Segurança Ocupacional</p>
-                    </div>
+          {/* Mobile Menu */}
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px]">
+              <div className="flex flex-col gap-6 pt-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xl">A1</span>
                   </div>
-                  
-                  <nav className="flex flex-col gap-4">
-                    {navigationItems.map((item) => (
-                      <button
-                        key={item.label}
-                        onClick={() => scrollToSection(item.href.slice(1))}
-                        className="text-left text-foreground hover:text-primary transition-smooth font-medium py-2"
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </nav>
-                  
-                  <div className="flex flex-col gap-3 mt-6">
-                    <Button
-                      variant="outline"
-                      onClick={() => scrollToSection('contato')}
-                      className="w-full"
-                    >
-                      Solicitar Orçamento
-                    </Button>
-                    <Button
-                      className="gradient-primary text-white w-full"
-                      onClick={() => scrollToSection('contato')}
-                    >
-                      Fale Conosco
-                    </Button>
+                  <div>
+                    <h2 className="font-bold text-lg text-primary">A1 Engenharia</h2>
+                    <p className="text-xs text-muted-foreground">Segurança Ocupacional</p>
                   </div>
                 </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+                
+                <nav className="flex flex-col gap-4">
+                  {navigationItems.map((item) => (
+                    <button
+                      key={item.label}
+                      onClick={() => scrollToSection(item.href.slice(1))}
+                      className="text-left text-foreground hover:text-primary transition-smooth font-medium py-2"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+                
+                <div className="flex flex-col gap-3 mt-6">
+                  <Button
+                    variant="outline"
+                    onClick={() => scrollToSection('contato')}
+                    className="w-full"
+                  >
+                    Solicitar Orçamento
+                  </Button>
+                  <Button
+                    className="gradient-primary text-white w-full"
+                    onClick={() => scrollToSection('contato')}
+                  >
+                    Fale Conosco
+                  </Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

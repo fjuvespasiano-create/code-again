@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { Shield, Award, Users, ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/hero-engineering.jpg';
+import { Shield, Award, Users, ArrowRight, ChevronDown } from 'lucide-react';
+import heroEngineers from '@/assets/hero-engineers.png';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,7 +13,7 @@ const Hero = () => {
   const stats = [
     { icon: Shield, label: 'Anos de Experiência', value: '15+' },
     { icon: Award, label: 'Projetos Concluídos', value: '500+' },
-    { icon: Users, label: 'Clientes Ativos', value: '200+' },
+    { icon: Users, label: 'Conformidade NR', value: '100%' },
   ];
 
   return (
@@ -21,8 +21,8 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={heroImage} 
-          alt="Engenharia e Segurança Ocupacional" 
+          src={heroEngineers} 
+          alt="Engenheiros profissionais trabalhando com equipamentos de segurança em ambiente industrial" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero opacity-90"></div>
@@ -40,8 +40,8 @@ const Hero = () => {
             </h1>
             
             <p className="body-lg mb-8 text-gray-100 max-w-2xl mx-auto">
-              Consultoria especializada em Segurança do Trabalho, Engenharia Mecânica e 
-              Projetos Estruturais. Protegemos vidas e otimizamos processos industriais.
+              Consultoria, projetos e treinamentos especializados para empresas de médio e grande porte. 
+              Protegemos vidas e otimizamos processos industriais com qualidade técnica e segurança.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ const Hero = () => {
               className="bg-white text-primary hover:bg-gray-100 shadow-hero text-lg px-8 py-6"
               onClick={() => scrollToSection('contato')}
             >
-              Solicitar Orçamento
+              Solicite seu Orçamento
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
@@ -87,12 +87,10 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <button
-          onClick={() => scrollToSection('servicos')}
+          onClick={() => scrollToSection('sobre')}
           className="animate-bounce text-white hover:text-gray-300 transition-smooth"
         >
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-          </div>
+          <ChevronDown className="h-8 w-8" />
         </button>
       </div>
     </section>

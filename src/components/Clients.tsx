@@ -1,46 +1,54 @@
 import { Card, CardContent } from '@/components/ui/card';
+import epoLogo from '@/assets/clients/epo-logo.png';
+import phvLogo from '@/assets/clients/phv-logo.png';
+import valeLogo from '@/assets/clients/vale-logo.png';
+import terrabelLogo from '@/assets/clients/terrabel-logo.png';
+import sesiLogo from '@/assets/clients/sesi-logo.png';
+import sadaLogo from '@/assets/clients/sada-logo.png';
+import agmarLogo from '@/assets/clients/agmar-logo.png';
+import caparaoLogo from '@/assets/clients/caparao-logo.png';
 
 const Clients = () => {
   const clients = [
     {
       name: 'EPO Engenharia',
       sector: 'Engenharia e Construção',
-      logo: '/api/placeholder/150/80'
+      logo: epoLogo
     },
     {
       name: 'PHV Engenharia',
       sector: 'Incorporação Imobiliária',
-      logo: '/api/placeholder/150/80'
+      logo: phvLogo
     },
     {
       name: 'Vale',
       sector: 'Mineração',
-      logo: '/api/placeholder/150/80'
+      logo: valeLogo
     },
     {
       name: 'Terrabel',
       sector: 'Empreendimentos',
-      logo: '/api/placeholder/150/80'
+      logo: terrabelLogo
     },
     {
       name: 'SESI',
       sector: 'Serviço Social da Indústria',
-      logo: '/api/placeholder/150/80'
+      logo: sesiLogo
     },
     {
       name: 'SADA',
       sector: 'Grupo Logístico',
-      logo: '/api/placeholder/150/80'
+      logo: sadaLogo
     },
     {
       name: 'Agmar Engenharia',
       sector: 'Construtora - Empreendimentos Residenciais',
-      logo: '/api/placeholder/150/80'
+      logo: agmarLogo
     },
     {
       name: 'Construtora Caparaó',
       sector: '67 Anos - Construção Civil',
-      logo: '/api/placeholder/150/80'
+      logo: caparaoLogo
     }
   ];
 
@@ -66,11 +74,11 @@ const Clients = () => {
           {clients.map((client, index) => (
             <Card key={index} className="gradient-card border-0 shadow-card hover:shadow-card-hover transition-smooth text-center">
               <CardContent className="p-6">
-                <div className="w-16 h-16 gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">
-                    {client.name.split(' ')[0].substring(0, 2)}
-                  </span>
-                </div>
+                <img 
+                  src={client.logo}
+                  alt={`Logo ${client.name}`}
+                  className="w-full h-20 object-contain mb-4 group-hover:scale-110 transition-transform"
+                />
                 <h3 className="heading-sm text-foreground mb-2">{client.name}</h3>
                 <p className="text-sm text-muted-foreground">{client.sector}</p>
               </CardContent>

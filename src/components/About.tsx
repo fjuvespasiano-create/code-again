@@ -1,175 +1,55 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Users, 
-  Target, 
-  Eye, 
-  Award, 
-  Shield, 
-  TrendingUp,
-  Clock,
-  CheckCircle
-} from 'lucide-react';
-
 const About = () => {
-  const values = [
-    {
-      icon: Shield,
-      title: 'Segurança em Primeiro Lugar',
-      description: 'A segurança das pessoas é nossa prioridade máxima em todos os projetos e serviços.'
-    },
-    {
-      icon: Award,
-      title: 'Excelência Técnica',
-      description: 'Mantemos os mais altos padrões de qualidade e precisão técnica em nossas soluções.'
-    },
-    {
-      icon: Users,
-      title: 'Parceria Estratégica',
-      description: 'Construímos relacionamentos duradouros baseados na confiança e resultados.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Inovação Contínua',
-      description: 'Investimos constantemente em tecnologia e metodologias avançadas.'
-    }
-  ];
-
-  const certifications = [
-    'CREA - Conselho Regional de Engenharia',
-    'Especialização em Segurança do Trabalho',
-    'Certificação NBR ISO 45001',
-    'Qualificação em Perícias Judiciais',
-    'Treinamento em Análise de Riscos',
-    'Especialização em Estruturas Metálicas'
-  ];
-
-  const achievements = [
-    { number: '15+', label: 'Anos de Experiência' },
-    { number: '500+', label: 'Projetos Executados' },
-    { number: '200+', label: 'Clientes Atendidos' },
-    { number: '1000+', label: 'Profissionais Treinados' }
-  ];
-
   return (
-    <section id="sobre" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16 fade-in">
-          <h2 className="heading-xl text-primary mb-4">
-            Sobre a A1 Engenharia
-          </h2>
-          <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
-            Há mais de 15 anos oferecendo soluções inovadoras em engenharia e segurança 
-            ocupacional, com foco na proteção de vidas e otimização de processos industriais.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Company Story */}
+    <section id="sobre" className="py-16 px-4">
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+              alt="Equipe profissional de engenharia em reunião"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
           <div className="space-y-6">
-            <div className="slide-up">
-              <h3 className="heading-lg text-primary mb-4">Nossa História</h3>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  A A1 Engenharia e Segurança Ocupacional nasceu da visão de criar um ambiente 
-                  de trabalho mais seguro e eficiente para empresas de todos os portes. Fundada 
-                  por engenheiros especialistas, nossa empresa rapidamente se tornou referência 
-                  no mercado brasileiro.
-                </p>
-                <p>
-                  Ao longo dos anos, desenvolvemos metodologias próprias e parcerias estratégicas 
-                  que nos permitem oferecer soluções completas e personalizadas, sempre alinhadas 
-                  às normas regulamentadoras e melhores práticas internacionais.
-                </p>
-                <p>
-                  Hoje, somos reconhecidos pela qualidade técnica, agilidade na entrega e 
-                  compromisso com a segurança, atendendo empresas de diversos setores em 
-                  todo o território nacional.
-                </p>
-              </div>
-            </div>
-
-            {/* Mission & Vision */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 slide-up">
-              <Card className="gradient-card border-0 p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Target className="h-8 w-8 text-primary" />
-                  <h4 className="heading-md text-primary">Missão</h4>
-                </div>
+            <h2 className="text-3xl lg:text-4xl font-bold">Quem Somos</h2>
+            <p className="text-lg text-muted-foreground">
+              Desde 2016, a A1 Engenharia e Segurança Ocupacional oferece soluções técnicas especializadas em sistemas de proteção contra quedas em altura, atendendo diversos setores com inovação e qualidade.
+            </p>
+            
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold">Nossa História e Missão</h3>
+              <p className="text-muted-foreground">
+                A história da A1 Engenharia teve início em 2016, com o propósito de atender à crescente demanda do setor da construção civil por soluções técnicas voltadas ao dimensionamento de Linhas de Vida e demais sistemas de proteção contra quedas em altura.
+              </p>
+              <p className="text-muted-foreground">
+                Evoluímos e expandimos nosso conhecimento técnico, permitindo atuar em outros segmentos como mineração, transporte, varejo e condomínios residenciais. Hoje, contamos com um portfólio diversificado e constantemente atualizado.
+              </p>
+              <div className="bg-primary/10 p-6 rounded-lg border-l-4 border-primary">
+                <p className="font-semibold mb-2">Missão:</p>
                 <p className="text-muted-foreground">
-                  Proteger vidas e otimizar processos industriais através de soluções 
-                  inovadoras em engenharia e segurança ocupacional.
+                  Proteger vidas por meio de soluções técnicas inteligentes e eficazes em engenharia de segurança, promovendo ambientes de trabalho mais seguros, eficientes e alinhados às normas vigentes.
                 </p>
-              </Card>
-
-              <Card className="gradient-card border-0 p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Eye className="h-8 w-8 text-primary" />
-                  <h4 className="heading-md text-primary">Visão</h4>
-                </div>
-                <p className="text-muted-foreground">
-                  Ser a empresa líder em consultoria de engenharia e segurança ocupacional 
-                  no Brasil, reconhecida pela excelência técnica.
-                </p>
-              </Card>
-            </div>
-          </div>
-
-          {/* Values & Certifications */}
-          <div className="space-y-8">
-            {/* Company Values */}
-            <div className="slide-up">
-              <h3 className="heading-lg text-primary mb-6">Nossos Valores</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {values.map((value, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 hover:bg-secondary/70 transition-smooth"
-                  >
-                    <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <value.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-primary mb-1">{value.title}</h5>
-                      <p className="text-sm text-muted-foreground">{value.description}</p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
 
-            {/* Certifications */}
-            <div className="slide-up">
-              <h3 className="heading-lg text-primary mb-6">Certificações e Qualificações</h3>
-              <div className="space-y-3">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">{cert}</span>
-                  </div>
-                ))}
+            <div className="grid sm:grid-cols-2 gap-4 mt-8">
+              <div className="space-y-2">
+                <h4 className="font-semibold text-primary">Segurança em primeiro lugar</h4>
+                <p className="text-sm text-muted-foreground">A integridade das pessoas está no centro de tudo o que fazemos</p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold text-primary">Qualidade técnica</h4>
+                <p className="text-sm text-muted-foreground">Entregamos projetos com precisão, sempre alinhados às normas e melhores práticas</p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold text-primary">Inovação</h4>
+                <p className="text-sm text-muted-foreground">Buscamos constantemente soluções modernas e eficazes para nossos clientes</p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-semibold text-primary">Comprometimento</h4>
+                <p className="text-sm text-muted-foreground">Atuamos com responsabilidade, ética e foco em resultados</p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Achievements */}
-        <div className="text-center">
-          <h3 className="heading-lg text-primary mb-8">Nossos Números</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => (
-              <div 
-                key={index} 
-                className="fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-center p-6 rounded-xl gradient-card shadow-card hover:shadow-card-hover transition-smooth">
-                  <div className="heading-xl text-primary mb-2">{achievement.number}</div>
-                  <div className="text-muted-foreground font-medium">{achievement.label}</div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

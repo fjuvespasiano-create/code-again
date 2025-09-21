@@ -58,8 +58,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Telefone',
-      content: '(11) 9999-9999',
-      link: 'tel:+5511999999999'
+      content: '(31) 99959-1842 (WhatsApp)',
+      link: 'tel:+5531999591842'
     },
     {
       icon: Mail,
@@ -70,13 +70,13 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Endereço',
-      content: 'São Paulo - SP, Brasil',
+      content: 'Rua Lisio Barreto, 447, AP 212\nAraguaia, Belo Horizonte - MG',
       link: '#'
     },
     {
       icon: Clock,
       title: 'Horário de Atendimento',
-      content: 'Segunda à Sexta: 8h às 18h',
+      content: 'Segunda à Sexta: 8h às 18h\nSábado: 8h às 12h',
       link: '#'
     }
   ];

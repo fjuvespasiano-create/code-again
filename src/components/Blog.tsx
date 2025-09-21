@@ -32,18 +32,18 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="heading-xl text-foreground mb-4">Blog & Insights</h2>
-          <p className="body-lg text-muted-foreground">
+    <section id="blog" className="py-16 px-4 bg-gray-50">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Blog & Insights</h2>
+          <p className="text-lg text-muted-foreground">
             Fique atualizado com as últimas tendências em segurança do trabalho e engenharia industrial.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <Card key={post.id} className="gradient-card border-0 shadow-card hover:shadow-card-hover transition-smooth group">
+            <Card key={post.id} className="bg-white shadow-lg hover:shadow-xl transition-shadow group">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img 
                   src={post.image}
@@ -62,13 +62,13 @@ const Blog = () => {
                   <Calendar className="h-4 w-4" />
                   {post.date}
                 </div>
-                <h3 className="heading-sm text-foreground leading-tight">
+                <h3 className="text-lg font-semibold text-foreground leading-tight">
                   {post.title}
                 </h3>
               </CardHeader>
               
               <CardContent className="pt-0">
-                <p className="text-muted-foreground mb-4 line-clamp-3">
+                <p className="text-muted-foreground mb-4">
                   {post.excerpt}
                 </p>
                 

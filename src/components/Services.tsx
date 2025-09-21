@@ -1,179 +1,109 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { 
-  Shield, 
-  Wrench, 
-  FileCheck, 
-  GraduationCap, 
-  Scale, 
-  Building,
-  ChevronRight,
-  CheckCircle
-} from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Services = () => {
   const services = [
     {
-      icon: Shield,
-      title: 'Consultoria em Segurança e Saúde Ocupacional',
-      description: 'Consultoria especializada em Engenharia de Segurança e Saúde Ocupacional, oferecendo soluções completas para conformidade regulatória.',
+      title: "Consultoria em Segurança e Saúde Ocupacional",
+      description: "Consultoria especializada em Engenharia de Segurança e Saúde Ocupacional, oferecendo soluções completas para conformidade regulatória e prevenção de acidentes de trabalho.",
       features: [
-        'Programa de Prevenção de Riscos Ambientais (PPRA)',
-        'Programa de Controle Médico de Saúde Ocupacional (PCMSO)',
-        'Laudo Técnico das Condições Ambientais de Trabalho (LTCAT)',
-        'Perfil Profissiográfico Previdenciário (PPP)'
+        "Consultoria especializada em Engenharia de Segurança e Saúde Ocupacional",
+        "Avaliação e adequação às Normas Regulamentadoras",
+        "Programas de prevenção de acidentes de trabalho"
       ],
-      color: 'from-blue-500 to-blue-600'
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      icon: Wrench,
-      title: 'Análise de Risco em Máquinas - NR 12',
-      description: 'Apreciação de risco em máquinas e equipamentos conforme NR 12 e NBR 12100, com projetos de adequação.',
+      title: "Treinamentos e Capacitação",
+      description: "Treinamentos de capacitação para operação segura de máquinas e equipamentos, desenvolvidos conforme as Normas Regulamentadoras vigentes.",
       features: [
-        'Análise de Risco conforme NBR 12100',
-        'Projetos de adequação à NR 12',
-        'Dispositivos de segurança em máquinas',
-        'Metodologia HRN (Hazard Rating Number)'
+        "Treinamentos de capacitação para operação de máquinas e equipamentos",
+        "Cursos de segurança do trabalho certificados",
+        "Capacitação em NR 11 - Transporte de materiais"
       ],
-      color: 'from-green-500 to-green-600'
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      icon: GraduationCap,
-      title: 'Treinamentos e Capacitação',
-      description: 'Treinamentos especializados para capacitação de profissionais em segurança do trabalho e normas regulamentadoras.',
+      title: "Perícia Trabalhista e Previdenciária",
+      description: "Assistente Técnico em Perícia Trabalhista e Previdenciária, oferecendo suporte especializado em processos judiciais relacionados à segurança do trabalho.",
       features: [
-        'Treinamento NR 35 - Trabalho em Altura',
-        'Treinamento NR 33 - Espaços Confinados',
-        'Treinamento NR 12 - Segurança em Máquinas',
-        'Capacitação de CIPA e SESMT'
+        "Assistente Técnico em Perícia Trabalhista e Previdenciária",
+        "Análise de acidentes de trabalho",
+        "Elaboração de pareceres técnicos"
       ],
-      color: 'from-purple-500 to-purple-600'
+      image: "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      icon: Scale,
-      title: 'Perícia Trabalhista e Previdenciária',
-      description: 'Perícias técnicas especializadas para processos trabalhistas e previdenciários com rigor técnico e científico.',
+      title: "Projetos de Linha de Vida e Proteção Contra Quedas",
+      description: "Projetos de sistemas de proteção contra quedas, incluindo linhas de vida horizontais e verticais, conforme NR 35 e NBR 15835.",
       features: [
-        'Perícia em Acidentes de Trabalho',
-        'Perícia em Doenças Ocupacionais',
-        'Nexo Técnico Epidemiológico',
-        'Assistência Técnica Judicial'
+        "Projetos de sistemas de proteção contra quedas",
+        "Linhas de vida horizontais e verticais",
+        "Dimensionamento conforme NR 35 e NBR 15835"
       ],
-      color: 'from-orange-500 to-orange-600'
+      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      icon: FileCheck,
-      title: 'Projetos de Linha de Vida e Proteção Contra Quedas',
-      description: 'Projetos especializados em sistemas de proteção contra quedas e linhas de vida para trabalho em altura.',
+      title: "Análise de Risco em Máquinas - NR 12 e NBR 12100",
+      description: "Apreciação de risco em máquinas e equipamentos NR 12 e NBR 12100 na metodologia HRN, com projetos de adequação.",
       features: [
-        'Projeto de Linha de Vida Horizontal',
-        'Projeto de Linha de Vida Vertical',
-        'Sistemas de Ancoragem',
-        'Memorial de Cálculo Estrutural'
+        "Apreciação de risco em máquinas e equipamentos",
+        "Metodologia HRN (Hazard Rating Number)",
+        "Projetos de adequação conforme NR 12"
       ],
-      color: 'from-red-500 to-red-600'
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      icon: Building,
-      title: 'Engenharia Estrutural - Aço e Madeira',
-      description: 'Projetos estruturais em aço e madeira com cálculos detalhados e especificações técnicas precisas.',
+      title: "Projetos Estruturais",
+      description: "Engenharia estrutural em aço e madeira com memorial de cálculo detalhado",
       features: [
-        'Projetos de Estruturas Metálicas',
-        'Projetos de Estruturas de Madeira',
-        'Análise Estrutural Computacional',
-        'Laudos de Estabilidade Estrutural'
+        "Projetos estruturais em aço e madeira",
+        "Memorial de cálculo detalhado",
+        "Análise estrutural completa"
       ],
-      color: 'from-indigo-500 to-indigo-600'
+      image: "https://images.unsplash.com/photo-1503387837-b154d5074bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     }
   ];
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="servicos" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16 fade-in">
-          <h2 className="heading-xl text-primary mb-4">
-            Nossos Serviços Especializados
-          </h2>
-          <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos soluções completas em engenharia e segurança ocupacional, 
-            com foco na proteção de vidas e otimização de processos industriais.
+    <section id="servicos" className="py-16 px-4 bg-gray-50">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Nossos Serviços</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Oferecemos soluções completas em três áreas principais, com expertise técnica e conformidade regulatória total.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="service-card gradient-card border-0 group hover:scale-[1.02]"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardHeader className="pb-4">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth`}>
-                  <service.icon className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="heading-md text-primary mb-2">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="body-md text-muted-foreground">
+            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+              <div className="aspect-video overflow-hidden rounded-t-lg">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground mb-4 text-sm">
                   {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
+                </p>
+                <ul className="space-y-2 mb-4">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    <li key={featureIndex} className="text-sm text-muted-foreground flex items-start">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                      {feature}
                     </li>
                   ))}
                 </ul>
-                <Button 
-                  variant="outline" 
-                  className="w-full group"
-                  onClick={() => scrollToSection('contato')}
-                >
+                <Button variant="outline" className="w-full">
                   Saiba Mais
-                  <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-smooth" />
                 </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center gradient-card rounded-2xl p-8 md:p-12 shadow-card">
-          <h3 className="heading-lg text-primary mb-4">
-            Precisa de uma Solução Personalizada?
-          </h3>
-          <p className="body-md text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Nossa equipe de especialistas está pronta para desenvolver soluções 
-            sob medida para as necessidades específicas da sua empresa.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="gradient-primary text-white shadow-hero"
-              onClick={() => scrollToSection('contato')}
-            >
-              Solicitar Orçamento Personalizado
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => scrollToSection('sobre')}
-            >
-              Conhecer Nossa Equipe
-            </Button>
-          </div>
         </div>
       </div>
     </section>

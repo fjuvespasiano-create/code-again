@@ -43,15 +43,11 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 relative">
-              <div className="w-full h-full gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">A1</span>
-              </div>
-              <div className="absolute -bottom-1 -right-1 text-xs font-bold text-primary">
-                ENGENHARIA E<br />
-                SEGURANÇA OCUPACIONAL
-              </div>
-            </div>
+            <img 
+              src="/src/assets/logo-a1.png" 
+              alt="A+ Engenharia & Segurança Ocupacional" 
+              className="h-12 w-auto"
+            />
           </div>
 
             {/* Desktop Navigation */}
@@ -87,13 +83,11 @@ const Header = () => {
             <SheetContent side="right" className="w-[300px]">
               <div className="flex flex-col gap-6 pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">A1</span>
-                  </div>
-                  <div>
-                    <h2 className="font-bold text-lg text-primary">A1 Engenharia</h2>
-                    <p className="text-xs text-muted-foreground">Segurança Ocupacional</p>
-                  </div>
+                  <img 
+                    src="/src/assets/logo-a1.png" 
+                    alt="A+ Engenharia & Segurança Ocupacional" 
+                    className="h-10 w-auto"
+                  />
                 </div>
                 
                 <nav className="flex flex-col gap-4">

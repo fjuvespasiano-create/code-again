@@ -19,14 +19,46 @@ const Gallery = () => {
   const projects = [
     {
       id: 1,
-      title: 'Consultoria em Segurança Ocupacional',
-      description: 'Inspeção e consultoria especializada em segurança do trabalho com foco na prevenção de acidentes',
-      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'seguranca',
-      tags: ['segurança', 'consultoria', 'prevenção']
+      title: 'Teste de Carga e Tagueamento',
+      description: 'Teste de resistência e certificação de pontos de ancoragem com dinamômetro analógico cap. 3.000kgf',
+      image: '/src/assets/projects/teste-carga-tagueamento.png',
+      category: 'protecao',
+      tags: ['teste de carga', 'ancoragem', 'certificação']
     },
     {
       id: 2,
+      title: 'Material para Instalação de Pontos de Ancoragem',
+      description: 'Parabolt Inox 12mm, olhal inox, barra rosqueada 15mm e conjunto padrão para instalação',
+      image: '/src/assets/projects/material-instalacao.png',
+      category: 'protecao',
+      tags: ['parabolt', 'inox', 'instalação']
+    },
+    {
+      id: 3,
+      title: 'Ponto de Ancoragem Instalado',
+      description: 'Ponto de ancoragem instalado em fachada de edifício com sistema de segurança contra quedas',
+      image: '/src/assets/projects/ponto-ancoragem-instalado.png',
+      category: 'protecao',
+      tags: ['fachada', 'ancoragem', 'altura']
+    },
+    {
+      id: 4,
+      title: 'Equipamento de Teste de Carga',
+      description: 'Dinamômetro analógico com capacidade de 3.000kgf para teste de ancoragem predial',
+      image: '/src/assets/projects/teste-carga-equipamento.png',
+      category: 'protecao',
+      tags: ['dinamômetro', 'teste', 'equipamento']
+    },
+    {
+      id: 5,
+      title: 'Linha de Vida para Montagem de Laje',
+      description: 'Sistema de linha de vida horizontal para proteção de trabalhadores em obra de construção civil',
+      image: '/src/assets/projects/linha-vida-laje.jpg',
+      category: 'protecao',
+      tags: ['linha de vida', 'laje', 'construção']
+    },
+    {
+      id: 6,
       title: 'Treinamentos Profissionais',
       description: 'Capacitação de trabalhadores para operação segura de equipamentos industriais',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
@@ -34,7 +66,7 @@ const Gallery = () => {
       tags: ['treinamento', 'capacitação', 'educação']
     },
     {
-      id: 3,
+      id: 7,
       title: 'Perícia Técnica Trabalhista',
       description: 'Análise técnica especializada para processos judiciais e perícias previdenciárias',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
@@ -42,28 +74,12 @@ const Gallery = () => {
       tags: ['perícia', 'judicial', 'análise']
     },
     {
-      id: 4,
-      title: 'Sistemas de Proteção Contra Quedas',
-      description: 'Projeto e instalação de linhas de vida e sistemas de ancoragem para trabalho em altura',
-      image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'protecao',
-      tags: ['altura', 'proteção', 'linha de vida']
-    },
-    {
-      id: 5,
-      title: 'Análise de Risco em Máquinas',
-      description: 'Avaliação de conformidade NR 12 e NBR 12100 com análise detalhada de riscos',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'analise',
-      tags: ['NR12', 'máquinas', 'risco']
-    },
-    {
-      id: 6,
-      title: 'Projetos Estruturais',
-      description: 'Engenharia estrutural em aço e madeira com memorial de cálculo detalhado',
-      image: 'https://images.unsplash.com/photo-1503387837-b154d5074bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'estrutural',
-      tags: ['estrutural', 'aço', 'madeira']
+      id: 8,
+      title: 'Consultoria em Segurança Ocupacional',
+      description: 'Inspeção e consultoria especializada em segurança do trabalho com foco na prevenção de acidentes',
+      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+      category: 'seguranca',
+      tags: ['segurança', 'consultoria', 'prevenção']
     }
   ];
 

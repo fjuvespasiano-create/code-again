@@ -53,16 +53,15 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-xl">A+</span>
+                <span className="text-primary font-bold text-xl">A1</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">A+ Engenharia</h3>
-                <p className="text-sm opacity-80">& Segurança Ocupacional</p>
+                <h3 className="font-bold text-lg">A1 ENGENHARIA</h3>
+                <p className="text-sm opacity-80">Segurança Ocupacional</p>
               </div>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              Há mais de 15 anos oferecendo soluções completas em engenharia e 
-              segurança ocupacional, protegendo vidas e otimizando processos industriais.
+              Soluções completas em engenharia e segurança do trabalho para empresas de médio e grande porte.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -82,33 +81,58 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Links Rápidos</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href.slice(1))}
-                    className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <button onClick={() => scrollToSection('home')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Home
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('sobre')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Sobre Nós
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('servicos')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Serviços
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('blog')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Blog
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('contato')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Contato
+                </button>
+              </li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Nossos Serviços</h4>
+            <h4 className="font-semibold text-lg mb-4">Serviços</h4>
             <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection('contato')}
-                    className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left"
-                  >
-                    {service}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <button onClick={() => scrollToSection('servicos')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Segurança do Trabalho
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('servicos')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Projetos de Segurança
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('servicos')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Engenharia Estrutural
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection('servicos')} className="text-sm opacity-80 hover:opacity-100 transition-smooth text-left">
+                  Consultoria Técnica
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -119,38 +143,38 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 opacity-80" />
                 <a 
-                  href="tel:+5527997081901" 
+                  href="tel:+5531999591842" 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  (27) 99708-1901
+                  (31) 99959-1842 (WhatsApp)
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 opacity-80" />
                 <a 
-                  href="mailto:amanda@amaisengenharia.com.br" 
+                  href="mailto:contato@a1engenharia.com.br" 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  amanda@amaisengenharia.com.br
+                  contato@a1engenharia.com.br
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 opacity-80 mt-0.5" />
                 <span className="text-sm opacity-80">
-                  Linhares - ES<br />
-                  Brasil
+                  Belo Horizonte - MG<br />
+                  Atendimento em todo o Brasil
                 </span>
               </div>
             </div>
             
             {/* Emergency Contact */}
-            <div className="mt-6 p-4 bg-red-500/20 rounded-lg border border-red-500/30">
-              <p className="text-sm font-semibold mb-2">Emergência 24h</p>
+            <div className="mt-6 p-4 bg-blue-500/20 rounded-lg border border-blue-500/30">
+              <p className="text-sm font-semibold mb-2">Atendimento especializado</p>
               <a 
-                href="tel:+5527997081901"
+                href="tel:+5531999591842"
                 className="text-sm opacity-90 hover:opacity-100 transition-smooth"
               >
-                (27) 99708-1901
+                (31) 99959-1842 (WhatsApp)
               </a>
             </div>
           </div>
@@ -163,9 +187,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm opacity-80 text-center md:text-left">
-            <p>© 2024 A+ Engenharia & Segurança Ocupacional. Todos os direitos reservados.</p>
+            <p>© 2025 A1 Engenharia & Segurança Ocupacional. Todos os direitos reservados.</p>
             <p className="mt-1">
-              CREA/ES - Engenharia de Segurança do Trabalho | CNPJ: 00.000.000/0001-00
+              Andreson Marques – Eng. Mecânico e Eng. Segurança do Trabalho
             </p>
           </div>
           
@@ -204,18 +228,18 @@ const Footer = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "A+ Engenharia & Segurança Ocupacional",
-            "alternateName": "A+ Engenharia",
-            "url": "https://amaisengenharia.com.br",
+            "name": "A1 Engenharia e Segurança Ocupacional",
+            "alternateName": "A1 Engenharia",
+            "url": "https://a1engenharia.com.br",
             "description": "Consultoria especializada em Segurança do Trabalho, Engenharia Mecânica e Projetos Estruturais",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "BR",
-              "addressLocality": "Linhares",
-              "addressRegion": "ES"
+              "addressLocality": "Belo Horizonte",
+              "addressRegion": "MG"
             },
-            "telephone": "+5527997081901",
-            "email": "amanda@amaisengenharia.com.br",
+            "telephone": "+5531999591842",
+            "email": "contato@a1engenharia.com.br",
             "serviceType": [
               "Consultoria em Segurança e Saúde Ocupacional",
               "Treinamentos e Capacitação",

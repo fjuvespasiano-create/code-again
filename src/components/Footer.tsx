@@ -53,11 +53,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-xl">A1</span>
+                <span className="text-primary font-bold text-xl">A+</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">A1 Engenharia</h3>
-                <p className="text-sm opacity-80">Segurança Ocupacional</p>
+                <h3 className="font-bold text-lg">A+ Engenharia</h3>
+                <p className="text-sm opacity-80">& Segurança Ocupacional</p>
               </div>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
@@ -119,25 +119,25 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 opacity-80" />
                 <a 
-                  href="tel:+5511999999999" 
+                  href="tel:+5527997081901" 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  (11) 9999-9999
+                  (27) 99708-1901
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 opacity-80" />
                 <a 
-                  href="mailto:contato@a1engenharia.com.br" 
+                  href="mailto:amanda@amaisengenharia.com.br" 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  contato@a1engenharia.com.br
+                  amanda@amaisengenharia.com.br
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 opacity-80 mt-0.5" />
                 <span className="text-sm opacity-80">
-                  São Paulo - SP<br />
+                  Linhares - ES<br />
                   Brasil
                 </span>
               </div>
@@ -147,10 +147,10 @@ const Footer = () => {
             <div className="mt-6 p-4 bg-red-500/20 rounded-lg border border-red-500/30">
               <p className="text-sm font-semibold mb-2">Emergência 24h</p>
               <a 
-                href="tel:+5511999999999"
+                href="tel:+5527997081901"
                 className="text-sm opacity-90 hover:opacity-100 transition-smooth"
               >
-                (11) 9999-9999
+                (27) 99708-1901
               </a>
             </div>
           </div>
@@ -163,9 +163,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm opacity-80 text-center md:text-left">
-            <p>© 2024 A1 Engenharia e Segurança Ocupacional. Todos os direitos reservados.</p>
+            <p>© 2024 A+ Engenharia & Segurança Ocupacional. Todos os direitos reservados.</p>
             <p className="mt-1">
-              CREA/SP - Engenharia de Segurança do Trabalho | CNPJ: 00.000.000/0001-00
+              CREA/ES - Engenharia de Segurança do Trabalho | CNPJ: 00.000.000/0001-00
             </p>
           </div>
           
@@ -204,18 +204,18 @@ const Footer = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "A1 Engenharia e Segurança Ocupacional",
-            "alternateName": "A1 Engenharia",
-            "url": "https://a1engenharia.com.br",
+            "name": "A+ Engenharia & Segurança Ocupacional",
+            "alternateName": "A+ Engenharia",
+            "url": "https://amaisengenharia.com.br",
             "description": "Consultoria especializada em Segurança do Trabalho, Engenharia Mecânica e Projetos Estruturais",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "BR",
-              "addressLocality": "São Paulo",
-              "addressRegion": "SP"
+              "addressLocality": "Linhares",
+              "addressRegion": "ES"
             },
-            "telephone": "+5511999999999",
-            "email": "contato@a1engenharia.com.br",
+            "telephone": "+5527997081901",
+            "email": "amanda@amaisengenharia.com.br",
             "serviceType": [
               "Consultoria em Segurança e Saúde Ocupacional",
               "Treinamentos e Capacitação",

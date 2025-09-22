@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import treinamentoNR12Teorico from '@/assets/projects/treinamento-nr12-teorico.jpg';
+import treinamentoNR12Pratico1 from '@/assets/projects/treinamento-nr12-pratico-1.jpg';
+import treinamentoNR12Pratico2 from '@/assets/projects/treinamento-nr12-pratico-2.jpg';
+import treinamentoNR12Pratico3 from '@/assets/projects/treinamento-nr12-pratico-3.jpg';
+import ancoragemTaludesInstalacao from '@/assets/projects/ancoragem-taludes-instalacao.jpg';
+import ancoragemTaludesUso1 from '@/assets/projects/ancoragem-taludes-uso-1.jpg';
+import ancoragemTaludesUso2 from '@/assets/projects/ancoragem-taludes-uso-2.jpg';
+import ancoragemTaludesUso3 from '@/assets/projects/ancoragem-taludes-uso-3.jpg';
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
@@ -19,14 +27,78 @@ const Gallery = () => {
   const projects = [
     {
       id: 1,
-      title: 'Teste de Carga e Tagueamento',
-      description: 'Teste de resistência e certificação de pontos de ancoragem com dinamômetro analógico cap. 3.000kgf',
-      image: '/src/assets/projects/teste-carga-tagueamento.png',
-      category: 'protecao',
-      tags: ['teste de carga', 'ancoragem', 'certificação']
+      title: 'Treinamento NR 12 - Capacitação Teórica',
+      description: 'Capacitação teórica em segurança de máquinas e equipamentos conforme NR 12 com apresentação didática',
+      image: treinamentoNR12Teorico,
+      category: 'treinamentos',
+      tags: ['NR12', 'teoria', 'capacitação']
     },
     {
       id: 2,
+      title: 'Treinamento NR 12 - Prática com Munck',
+      description: 'Treinamento prático para operação segura de caminhão munck conforme normas de segurança',
+      image: treinamentoNR12Pratico1,
+      category: 'treinamentos',
+      tags: ['NR12', 'munck', 'prática']
+    },
+    {
+      id: 3,
+      title: 'Treinamento NR 12 - Capacitação de Equipe',
+      description: 'Capacitação prática de equipe para operação segura de equipamentos pesados em campo',
+      image: treinamentoNR12Pratico2,
+      category: 'treinamentos',
+      tags: ['NR12', 'equipe', 'campo']
+    },
+    {
+      id: 4,
+      title: 'Treinamento NR 12 - Uso de EPIs',
+      description: 'Instrução prática sobre uso correto de equipamentos de proteção individual em operações',
+      image: treinamentoNR12Pratico3,
+      category: 'treinamentos',
+      tags: ['NR12', 'EPI', 'proteção']
+    },
+    {
+      id: 5,
+      title: 'Sistema de Ancoragem em Taludes - Instalação',
+      description: 'Instalação de sistema de ancoragem para acesso seguro em taludes e áreas de difícil acesso',
+      image: ancoragemTaludesInstalacao,
+      category: 'protecao',
+      tags: ['ancoragem', 'taludes', 'instalação']
+    },
+    {
+      id: 6,
+      title: 'Acesso Seguro em Taludes - Área Aquática',
+      description: 'Utilização de sistema de ancoragem para trabalhos seguros próximos a corpos d\'água',
+      image: ancoragemTaludesUso1,
+      category: 'protecao',
+      tags: ['taludes', 'água', 'rapel']
+    },
+    {
+      id: 7,
+      title: 'Sistema de Ancoragem - Trabalho em Altura',
+      description: 'Aplicação prática de sistema de proteção contra quedas em taludes de grande altura',
+      image: ancoragemTaludesUso2,
+      category: 'protecao',
+      tags: ['altura', 'ancoragem', 'segurança']
+    },
+    {
+      id: 8,
+      title: 'Trabalho em Área Vegetada',
+      description: 'Execução de serviços especializados em áreas com vegetação densa utilizando EPIs adequados',
+      image: ancoragemTaludesUso3,
+      category: 'protecao',
+      tags: ['vegetação', 'EPI', 'campo']
+    },
+    {
+      id: 9,
+      title: 'Teste de Carga e Tagueamento',
+      description: 'Teste de resistência e certificação de pontos de ancoragem com dinamômetro analógico cap. 3.000kgf',
+      image: '/src/assets/projects/teste-carga-tagueamento.png',
+      category: 'analise',
+      tags: ['teste de carga', 'ancoragem', 'certificação']
+    },
+    {
+      id: 10,
       title: 'Material para Instalação de Pontos de Ancoragem',
       description: 'Parabolt Inox 12mm, olhal inox, barra rosqueada 15mm e conjunto padrão para instalação',
       image: '/src/assets/projects/material-instalacao.png',
@@ -34,7 +106,7 @@ const Gallery = () => {
       tags: ['parabolt', 'inox', 'instalação']
     },
     {
-      id: 3,
+      id: 11,
       title: 'Ponto de Ancoragem Instalado',
       description: 'Ponto de ancoragem instalado em fachada de edifício com sistema de segurança contra quedas',
       image: '/src/assets/projects/ponto-ancoragem-instalado.png',
@@ -42,15 +114,15 @@ const Gallery = () => {
       tags: ['fachada', 'ancoragem', 'altura']
     },
     {
-      id: 4,
+      id: 12,
       title: 'Equipamento de Teste de Carga',
       description: 'Dinamômetro analógico com capacidade de 3.000kgf para teste de ancoragem predial',
       image: '/src/assets/projects/teste-carga-equipamento.png',
-      category: 'protecao',
+      category: 'analise',
       tags: ['dinamômetro', 'teste', 'equipamento']
     },
     {
-      id: 5,
+      id: 13,
       title: 'Linha de Vida para Montagem de Laje',
       description: 'Sistema de linha de vida horizontal para proteção de trabalhadores em obra de construção civil',
       image: '/src/assets/projects/linha-vida-laje.jpg',
@@ -58,28 +130,20 @@ const Gallery = () => {
       tags: ['linha de vida', 'laje', 'construção']
     },
     {
-      id: 6,
-      title: 'Treinamentos Profissionais',
-      description: 'Capacitação de trabalhadores para operação segura de equipamentos industriais',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'treinamentos',
-      tags: ['treinamento', 'capacitação', 'educação']
-    },
-    {
-      id: 7,
-      title: 'Perícia Técnica Trabalhista',
-      description: 'Análise técnica especializada para processos judiciais e perícias previdenciárias',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'pericias',
-      tags: ['perícia', 'judicial', 'análise']
-    },
-    {
-      id: 8,
+      id: 14,
       title: 'Consultoria em Segurança Ocupacional',
       description: 'Inspeção e consultoria especializada em segurança do trabalho com foco na prevenção de acidentes',
       image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
       category: 'seguranca',
       tags: ['segurança', 'consultoria', 'prevenção']
+    },
+    {
+      id: 15,
+      title: 'Perícia Técnica Trabalhista',
+      description: 'Análise técnica especializada para processos judiciais e perícias previdenciárias',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+      category: 'pericias',
+      tags: ['perícia', 'judicial', 'análise']
     }
   ];
 

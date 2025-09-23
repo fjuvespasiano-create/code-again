@@ -44,7 +44,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
-              src="/src/assets/logo-a1.png" 
+              src="/logo-a1.png" 
               alt="A+ Engenharia & Segurança Ocupacional" 
               className="h-12 w-auto"
             />
@@ -84,7 +84,7 @@ const Header = () => {
               <div className="flex flex-col gap-6 pt-6">
                 <div className="flex items-center gap-3">
                   <img 
-                    src="/src/assets/logo-a1.png" 
+                    src="/logo-a1.png" 
                     alt="A+ Engenharia & Segurança Ocupacional" 
                     className="h-10 w-auto"
                   />

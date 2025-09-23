@@ -39,7 +39,7 @@ const Gallery = () => {
 
   const projects = [
     {
-      id: 1,
+      id: 'project-1',
       title: 'Treinamento NR 12 - Capacitação Teórica',
       description: 'Capacitação teórica em segurança de máquinas e equipamentos conforme NR 12 com apresentação didática',
       image: treinamentoNR12Teorico,
@@ -47,7 +47,7 @@ const Gallery = () => {
       tags: ['NR12', 'teoria', 'capacitação']
     },
     {
-      id: 2,
+      id: 'project-2',
       title: 'Treinamento NR 12 - Prática com Munck',
       description: 'Treinamento prático para operação segura de caminhão munck conforme normas de segurança',
       image: treinamentoNR12Pratico1,
@@ -55,7 +55,7 @@ const Gallery = () => {
       tags: ['NR12', 'munck', 'prática']
     },
     {
-      id: 3,
+      id: 'project-3',
       title: 'Treinamento NR 12 - Capacitação de Equipe',
       description: 'Capacitação prática de equipe para operação segura de equipamentos pesados em campo',
       image: treinamentoNR12Pratico2,
@@ -63,7 +63,7 @@ const Gallery = () => {
       tags: ['NR12', 'equipe', 'campo']
     },
     {
-      id: 4,
+      id: 'project-4',
       title: 'Treinamento NR 12 - Uso de EPIs',
       description: 'Instrução prática sobre uso correto de equipamentos de proteção individual em operações',
       image: treinamentoNR12Pratico3,
@@ -71,7 +71,7 @@ const Gallery = () => {
       tags: ['NR12', 'EPI', 'proteção']
     },
     {
-      id: 5,
+      id: 'project-5',
       title: 'Sistema de Ancoragem em Taludes - Instalação',
       description: 'Instalação de sistema de ancoragem para acesso seguro em taludes e áreas de difícil acesso',
       image: ancoragemTaludesInstalacao,
@@ -79,7 +79,7 @@ const Gallery = () => {
       tags: ['ancoragem', 'taludes', 'instalação']
     },
     {
-      id: 6,
+      id: 'project-6',
       title: 'Acesso Seguro em Taludes - Área Aquática',
       description: 'Utilização de sistema de ancoragem para trabalhos seguros próximos a corpos d\'água',
       image: ancoragemTaludesUso1,
@@ -87,7 +87,7 @@ const Gallery = () => {
       tags: ['taludes', 'água', 'rapel']
     },
     {
-      id: 7,
+      id: 'project-7',
       title: 'Sistema de Ancoragem - Trabalho em Altura',
       description: 'Aplicação prática de sistema de proteção contra quedas em taludes de grande altura',
       image: ancoragemTaludesUso2,
@@ -95,7 +95,7 @@ const Gallery = () => {
       tags: ['altura', 'ancoragem', 'segurança']
     },
     {
-      id: 8,
+      id: 'project-8',
       title: 'Trabalho em Área Vegetada',
       description: 'Execução de serviços especializados em áreas com vegetação densa utilizando EPIs adequados',
       image: ancoragemTaludesUso3,
@@ -103,7 +103,7 @@ const Gallery = () => {
       tags: ['vegetação', 'EPI', 'campo']
     },
     {
-      id: 9,
+      id: 'project-9',
       title: 'Teste de Carga e Tagueamento',
       description: 'Teste de resistência e certificação de pontos de ancoragem com dinamômetro analógico cap. 3.000kgf',
       image: testeCargaTagueamento,
@@ -111,7 +111,7 @@ const Gallery = () => {
       tags: ['teste de carga', 'ancoragem', 'certificação']
     },
     {
-      id: 10,
+      id: 'project-10',
       title: 'Material para Instalação de Pontos de Ancoragem',
       description: 'Parabolt Inox 12mm, olhal inox, barra rosqueada 15mm e conjunto padrão para instalação',
       image: materialInstalacao,
@@ -119,7 +119,7 @@ const Gallery = () => {
       tags: ['parabolt', 'inox', 'instalação']
     },
     {
-      id: 11,
+      id: 'project-11',
       title: 'Ponto de Ancoragem Instalado',
       description: 'Ponto de ancoragem instalado em fachada de edifício com sistema de segurança contra quedas',
       image: pontoAnoragemInstalado,
@@ -127,7 +127,7 @@ const Gallery = () => {
       tags: ['fachada', 'ancoragem', 'altura']
     },
     {
-      id: 12,
+      id: 'project-12',
       title: 'Equipamento de Teste de Carga',
       description: 'Dinamômetro analógico com capacidade de 3.000kgf para teste de ancoragem predial',
       image: testeCargaEquipamento,
@@ -135,7 +135,7 @@ const Gallery = () => {
       tags: ['dinamômetro', 'teste', 'equipamento']
     },
     {
-      id: 13,
+      id: 'project-13',
       title: 'Linha de Vida para Montagem de Laje',
       description: 'Sistema de linha de vida horizontal para proteção de trabalhadores em obra de construção civil',
       image: linhaVidaLaje,
@@ -143,7 +143,7 @@ const Gallery = () => {
       tags: ['linha de vida', 'laje', 'construção']
     },
     {
-      id: 14,
+      id: 'project-14',
       title: 'Inspeção de Obra por Engenheiro',
       description: 'Inspeção técnica e acompanhamento de obra por engenheiro especializado em segurança do trabalho',
       image: engenheiroObraInspecao,
@@ -151,7 +151,7 @@ const Gallery = () => {
       tags: ['inspeção', 'engenheiro', 'obra']
     },
     {
-      id: 15,
+      id: 'project-15',
       title: 'Limpeza e Manutenção com EPIs',
       description: 'Serviços de limpeza e manutenção em áreas de vegetação utilizando equipamentos de proteção adequados',
       image: limpezaVegetacaoEpi,
@@ -159,7 +159,7 @@ const Gallery = () => {
       tags: ['limpeza', 'EPI', 'manutenção']
     },
     {
-      id: 16,
+      id: 'project-16',
       title: 'Sistema de Proteção em Altura Urbana',
       description: 'Implementação de sistema de proteção contra quedas em ambiente urbano com vista panorâmica',
       image: protecaoAlturaUrbana,
@@ -167,7 +167,7 @@ const Gallery = () => {
       tags: ['altura', 'urbano', 'proteção']
     },
     {
-      id: 17,
+      id: 'project-17',
       title: 'Linha de Vida Horizontal em Construção',
       description: 'Sistema de linha de vida horizontal instalado para proteção de trabalhadores em obra',
       image: linhaVidaConstrucao,
@@ -175,7 +175,7 @@ const Gallery = () => {
       tags: ['linha de vida', 'horizontal', 'obra']
     },
     {
-      id: 18,
+      id: 'project-18',
       title: 'Construção de Laje com Estruturas',
       description: 'Projeto de construção de laje com estruturas metálicas e sistemas de proteção coletiva',
       image: construcaoLajeEstrutura,
@@ -183,7 +183,7 @@ const Gallery = () => {
       tags: ['laje', 'estrutura', 'construção']
     },
     {
-      id: 19,
+      id: 'project-19',
       title: 'Desenvolvimento de Edifícios',
       description: 'Acompanhamento técnico de desenvolvimento de edifícios residenciais e comerciais',
       image: edificiosConstrucao,
@@ -191,7 +191,7 @@ const Gallery = () => {
       tags: ['edifícios', 'desenvolvimento', 'técnico']
     },
     {
-      id: 20,
+      id: 'project-20',
       title: 'Trabalho em Área Úmida',
       description: 'Execução de serviços especializados em áreas úmidas com equipamentos de proteção adequados',
       image: trabalhoAreaUmida,
@@ -199,28 +199,12 @@ const Gallery = () => {
       tags: ['área úmida', 'EPI', 'serviços']
     },
     {
-      id: 21,
+      id: 'project-21',
       title: 'Base de Equipamento de Teste',
       description: 'Instalação e configuração de base para equipamentos de teste de carga e ancoragem',
       image: equipamentoTesteBase,
       category: 'analise',
       tags: ['base', 'equipamento', 'teste']
-    },
-    {
-      id: 22,
-      title: 'Consultoria em Segurança Ocupacional',
-      description: 'Inspeção e consultoria especializada em segurança do trabalho com foco na prevenção de acidentes',
-      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'seguranca',
-      tags: ['segurança', 'consultoria', 'prevenção']
-    },
-    {
-      id: 23,
-      title: 'Perícia Técnica Trabalhista',
-      description: 'Análise técnica especializada para processos judiciais e perícias previdenciárias',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      category: 'pericias',
-      tags: ['perícia', 'judicial', 'análise']
     }
   ];
 
@@ -270,7 +254,7 @@ const Gallery = () => {
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
-                    <Badge key={index} variant="secondary" className="text-xs">
+                    <Badge key={`${project.id}-tag-${index}`} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
                   ))}

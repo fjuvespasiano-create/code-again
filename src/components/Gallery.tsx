@@ -10,6 +10,19 @@ import ancoragemTaludesInstalacao from '@/assets/projects/ancoragem-taludes-inst
 import ancoragemTaludesUso1 from '@/assets/projects/ancoragem-taludes-uso-1.jpg';
 import ancoragemTaludesUso2 from '@/assets/projects/ancoragem-taludes-uso-2.jpg';
 import ancoragemTaludesUso3 from '@/assets/projects/ancoragem-taludes-uso-3.jpg';
+import engenheiroObraInspecao from '@/assets/projects/engenheiro-obra-inspecao.jpg';
+import testeCargaTagueamento from '@/assets/projects/teste-carga-tagueamento.jpg';
+import limpezaVegetacaoEpi from '@/assets/projects/limpeza-vegetacao-epi.jpg';
+import protecaoAlturaUrbana from '@/assets/projects/protecao-altura-urbana.jpg';
+import linhaVidaConstrucao from '@/assets/projects/linha-vida-construcao.jpg';
+import construcaoLajeEstrutura from '@/assets/projects/construcao-laje-estrutura.jpg';
+import edificiosConstrucao from '@/assets/projects/edificios-construcao.jpg';
+import trabalhoAreaUmida from '@/assets/projects/trabalho-area-umida.jpg';
+import equipamentoTesteBase from '@/assets/projects/equipamento-teste-base.jpg';
+import materialInstalacao from '@/assets/projects/material-instalacao.png';
+import pontoAnoragemInstalado from '@/assets/projects/ponto-ancoragem-instalado.png';
+import testeCargaEquipamento from '@/assets/projects/teste-carga-equipamento.png';
+import linhaVidaLaje from '@/assets/projects/linha-vida-laje.jpg';
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
@@ -93,7 +106,7 @@ const Gallery = () => {
       id: 9,
       title: 'Teste de Carga e Tagueamento',
       description: 'Teste de resistência e certificação de pontos de ancoragem com dinamômetro analógico cap. 3.000kgf',
-      image: '/src/assets/projects/teste-carga-tagueamento.png',
+      image: testeCargaTagueamento,
       category: 'analise',
       tags: ['teste de carga', 'ancoragem', 'certificação']
     },
@@ -101,7 +114,7 @@ const Gallery = () => {
       id: 10,
       title: 'Material para Instalação de Pontos de Ancoragem',
       description: 'Parabolt Inox 12mm, olhal inox, barra rosqueada 15mm e conjunto padrão para instalação',
-      image: '/src/assets/projects/material-instalacao.png',
+      image: materialInstalacao,
       category: 'protecao',
       tags: ['parabolt', 'inox', 'instalação']
     },
@@ -109,7 +122,7 @@ const Gallery = () => {
       id: 11,
       title: 'Ponto de Ancoragem Instalado',
       description: 'Ponto de ancoragem instalado em fachada de edifício com sistema de segurança contra quedas',
-      image: '/src/assets/projects/ponto-ancoragem-instalado.png',
+      image: pontoAnoragemInstalado,
       category: 'protecao',
       tags: ['fachada', 'ancoragem', 'altura']
     },
@@ -117,7 +130,7 @@ const Gallery = () => {
       id: 12,
       title: 'Equipamento de Teste de Carga',
       description: 'Dinamômetro analógico com capacidade de 3.000kgf para teste de ancoragem predial',
-      image: '/src/assets/projects/teste-carga-equipamento.png',
+      image: testeCargaEquipamento,
       category: 'analise',
       tags: ['dinamômetro', 'teste', 'equipamento']
     },
@@ -125,12 +138,76 @@ const Gallery = () => {
       id: 13,
       title: 'Linha de Vida para Montagem de Laje',
       description: 'Sistema de linha de vida horizontal para proteção de trabalhadores em obra de construção civil',
-      image: '/src/assets/projects/linha-vida-laje.jpg',
+      image: linhaVidaLaje,
       category: 'protecao',
       tags: ['linha de vida', 'laje', 'construção']
     },
     {
       id: 14,
+      title: 'Inspeção de Obra por Engenheiro',
+      description: 'Inspeção técnica e acompanhamento de obra por engenheiro especializado em segurança do trabalho',
+      image: engenheiroObraInspecao,
+      category: 'seguranca',
+      tags: ['inspeção', 'engenheiro', 'obra']
+    },
+    {
+      id: 15,
+      title: 'Limpeza e Manutenção com EPIs',
+      description: 'Serviços de limpeza e manutenção em áreas de vegetação utilizando equipamentos de proteção adequados',
+      image: limpezaVegetacaoEpi,
+      category: 'protecao',
+      tags: ['limpeza', 'EPI', 'manutenção']
+    },
+    {
+      id: 16,
+      title: 'Sistema de Proteção em Altura Urbana',
+      description: 'Implementação de sistema de proteção contra quedas em ambiente urbano com vista panorâmica',
+      image: protecaoAlturaUrbana,
+      category: 'protecao',
+      tags: ['altura', 'urbano', 'proteção']
+    },
+    {
+      id: 17,
+      title: 'Linha de Vida Horizontal em Construção',
+      description: 'Sistema de linha de vida horizontal instalado para proteção de trabalhadores em obra',
+      image: linhaVidaConstrucao,
+      category: 'protecao',
+      tags: ['linha de vida', 'horizontal', 'obra']
+    },
+    {
+      id: 18,
+      title: 'Construção de Laje com Estruturas',
+      description: 'Projeto de construção de laje com estruturas metálicas e sistemas de proteção coletiva',
+      image: construcaoLajeEstrutura,
+      category: 'estrutural',
+      tags: ['laje', 'estrutura', 'construção']
+    },
+    {
+      id: 19,
+      title: 'Desenvolvimento de Edifícios',
+      description: 'Acompanhamento técnico de desenvolvimento de edifícios residenciais e comerciais',
+      image: edificiosConstrucao,
+      category: 'estrutural',
+      tags: ['edifícios', 'desenvolvimento', 'técnico']
+    },
+    {
+      id: 20,
+      title: 'Trabalho em Área Úmida',
+      description: 'Execução de serviços especializados em áreas úmidas com equipamentos de proteção adequados',
+      image: trabalhoAreaUmida,
+      category: 'protecao',
+      tags: ['área úmida', 'EPI', 'serviços']
+    },
+    {
+      id: 21,
+      title: 'Base de Equipamento de Teste',
+      description: 'Instalação e configuração de base para equipamentos de teste de carga e ancoragem',
+      image: equipamentoTesteBase,
+      category: 'analise',
+      tags: ['base', 'equipamento', 'teste']
+    },
+    {
+      id: 22,
       title: 'Consultoria em Segurança Ocupacional',
       description: 'Inspeção e consultoria especializada em segurança do trabalho com foco na prevenção de acidentes',
       image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
@@ -138,7 +215,7 @@ const Gallery = () => {
       tags: ['segurança', 'consultoria', 'prevenção']
     },
     {
-      id: 15,
+      id: 23,
       title: 'Perícia Técnica Trabalhista',
       description: 'Análise técnica especializada para processos judiciais e perícias previdenciárias',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',

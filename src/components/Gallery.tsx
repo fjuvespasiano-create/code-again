@@ -22,6 +22,7 @@ import equipamentoTesteBase from '@/assets/projects/equipamento-teste-base.jpg';
 import materialInstalacao from '@/assets/projects/material-instalacao.png';
 import pontoAnoragemInstalado from '@/assets/projects/ponto-ancoragem-instalado.png';
 import testeCargaEquipamento from '@/assets/projects/teste-carga-equipamento.png';
+import testeCargaEquipamentoTripé from '@/assets/projects/teste-carga-equipamento.jpg';
 import linhaVidaLaje from '@/assets/projects/linha-vida-laje.jpg';
 
 const Gallery = () => {
@@ -205,6 +206,14 @@ const Gallery = () => {
       image: equipamentoTesteBase,
       category: 'analise',
       tags: ['base', 'equipamento', 'teste']
+    },
+    {
+      id: 'project-22',
+      title: 'Tripé para Teste de Carga de Ancoragem',
+      description: 'Equipamento tripé metálico para teste de carga em pontos de ancoragem conforme NBR 15835 - capacidade 3.000kgf',
+      image: testeCargaEquipamentoTripé,
+      category: 'analise',
+      tags: ['tripé', 'teste de carga', 'NBR 15835']
     }
   ];
 

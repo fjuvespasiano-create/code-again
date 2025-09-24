@@ -96,7 +96,7 @@ const Contact = () => {
       icon: MessageSquare,
       title: 'WhatsApp',
       description: 'Conversar agora',
-      action: () => window.open('https://wa.me/5511999999999', '_blank')
+      action: () => window.open('https://wa.me/5531999591842', '_blank')
     },
     {
       icon: Calendar,
@@ -304,9 +304,9 @@ const Contact = () => {
               </div>
               <Button 
                 className="bg-red-500 hover:bg-red-600 text-white"
-                onClick={() => window.open('tel:+5511999999999', '_self')}
+                onClick={() => window.open('tel:+5531999591842', '_self')}
               >
-                (11) 9999-9999 - Emergência 24h
+                (31) 99959-1842 - Emergência 24h
               </Button>
             </CardContent>
           </Card>

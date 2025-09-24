@@ -25,11 +25,16 @@ const Services = () => {
     },
     {
       title: "Perícia Trabalhista e Previdenciária",
-      description: "Assistente Técnico em Perícia Trabalhista e Previdenciária, oferecendo suporte especializado em processos judiciais relacionados à segurança do trabalho.",
+      description: "Assistente Técnico em Perícia Trabalhista e Previdenciária, oferecendo suporte especializado em processos judiciais relacionados à segurança do trabalho e doenças ocupacionais.",
       features: [
         "Assistente Técnico em Perícia Trabalhista e Previdenciária",
-        "Análise de acidentes de trabalho",
-        "Elaboração de pareceres técnicos"
+        "Análise técnica de acidentes de trabalho e doenças ocupacionais",
+        "Elaboração de pareceres técnicos fundamentados",
+        "Vistoria técnica em locais de trabalho",
+        "Análise de nexo causal entre trabalho e doença/acidente",
+        "Avaliação de insalubridade e periculosidade",
+        "Perícias em aposentadoria especial",
+        "Contestação de laudos periciais"
       ],
       image: "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },

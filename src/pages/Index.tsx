@@ -16,7 +16,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    document.title = "A1 Engenharia e Segurança Ocupacional | Soluções Completas em Engenharia e Segurança";
+    document.title = "A+ Engenharia e Segurança Ocupacional | Soluções Completas em Engenharia e Segurança";
   }, []);
 
   return (

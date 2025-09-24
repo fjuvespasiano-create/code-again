@@ -53,10 +53,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-xl">A1</span>
+                <span className="text-primary font-bold text-xl">A+</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">A1 ENGENHARIA</h3>
+                <h3 className="font-bold text-lg">A+ ENGENHARIA</h3>
                 <p className="text-sm opacity-80">Segurança Ocupacional</p>
               </div>
             </div>
@@ -187,7 +187,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm opacity-80 text-center md:text-left">
-            <p>© 2025 A1 Engenharia & Segurança Ocupacional. Todos os direitos reservados.</p>
+            <p>© 2025 A+ Engenharia & Segurança Ocupacional. Todos os direitos reservados.</p>
             <p className="mt-1">
               Andreson Marques – Eng. Mecânico e Eng. Segurança do Trabalho
             </p>
@@ -228,9 +228,9 @@ const Footer = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "A1 Engenharia e Segurança Ocupacional",
-            "alternateName": "A1 Engenharia",
-            "url": "https://a1engenharia.com.br",
+            "name": "A+ Engenharia e Segurança Ocupacional",
+            "alternateName": "A+ Engenharia",
+            "url": "https://aplus-engenharia.com.br",
             "description": "Consultoria especializada em Segurança do Trabalho, Engenharia Mecânica e Projetos Estruturais",
             "address": {
               "@type": "PostalAddress",

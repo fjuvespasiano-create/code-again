@@ -7,13 +7,13 @@ const Testimonials = () => {
       id: 1,
       name: 'Carlos Silva',
       position: 'Diretor Industrial - MetalTech S.A.',
-      content: 'A A1 Engenharia transformou nosso ambiente industrial. A adequação das máquinas conforme NR 12 foi executada com precisão técnica excepcional. Recomendo fortemente seus serviços.',
+      content: 'A A+ Engenharia transformou nosso ambiente industrial. A adequação das máquinas conforme NR 12 foi executada com precisão técnica excepcional. Recomendo fortemente seus serviços.',
     },
     {
       id: 2,
       name: 'Ana Rodrigues',
       position: 'Gerente de Segurança - Construtora ABC',
-      content: 'Os treinamentos de trabalho em altura salvaram vidas em nossa empresa. A metodologia e qualidade técnica dos projetos da A1 são impressionantes.',
+      content: 'Os treinamentos de trabalho em altura salvaram vidas em nossa empresa. A metodologia e qualidade técnica dos projetos da A+ são impressionantes.',
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Testimonials = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">O Que Nossos Clientes Dizem</h2>
           <p className="text-lg text-muted-foreground">
-            Empresas que confiam na A1 Engenharia para suas necessidades de segurança e engenharia.
+            Empresas que confiam na A+ Engenharia para suas necessidades de segurança e engenharia.
           </p>
         </div>
 

@@ -198,7 +198,7 @@ const TechnicalStandards = () => {
               <Button 
                 variant="outline" 
                 className="gap-2"
-                onClick={() => window.open('https://www.abnt.org.br/normalizacao/elaboracao-de-normas/pesquisa-de-normas', '_blank')}
+                onClick={() => window.open('https://abnt.org.br/', '_blank')}
               >
                 <ExternalLink className="h-4 w-4" />
                 Consultar Normas NBR

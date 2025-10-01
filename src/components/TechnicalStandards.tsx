@@ -8,8 +8,10 @@ import {
   HardHat,
   Wrench,
   Building2,
-  Mountain
+  Mountain,
+  ExternalLink
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const TechnicalStandards = () => {
   const standards = [
@@ -182,7 +184,7 @@ const TechnicalStandards = () => {
               Nossos projetos seguem rigorosamente as normas técnicas nacionais e internacionais, 
               garantindo a máxima segurança e qualidade em todas as entregas.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
               {certifications.map((cert, index) => (
                 <div key={index} className="text-center">
                   <Badge variant="outline" className="mb-2 w-full justify-center">
@@ -191,6 +193,16 @@ const TechnicalStandards = () => {
                   <p className="text-xs text-muted-foreground">{cert.description}</p>
                 </div>
               ))}
+            </div>
+            <div className="flex justify-center">
+              <Button 
+                variant="outline" 
+                className="gap-2"
+                onClick={() => window.open('https://www.abnt.org.br/normalizacao/elaboracao-de-normas/pesquisa-de-normas', '_blank')}
+              >
+                <ExternalLink className="h-4 w-4" />
+                Consultar Normas NBR
+              </Button>
             </div>
           </CardContent>
         </Card>

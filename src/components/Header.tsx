@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
+import { Menu, ExternalLink } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,6 +66,14 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Button
+              variant="outline"
+              className="gap-2"
+              onClick={() => window.open('https://abnt.org.br/', '_blank')}
+            >
+              <ExternalLink className="h-4 w-4" />
+              Consultar Normas NBR
+            </Button>
+            <Button
               className="gradient-primary text-white font-medium"
               onClick={() => scrollToSection('contato')}
             >
@@ -103,6 +111,14 @@ const Header = () => {
                 </nav>
                 
                 <div className="flex flex-col gap-3 mt-6">
+                  <Button
+                    variant="outline"
+                    className="w-full gap-2"
+                    onClick={() => window.open('https://abnt.org.br/', '_blank')}
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Consultar Normas NBR
+                  </Button>
                   <Button
                     variant="outline"
                     onClick={() => scrollToSection('contato')}

@@ -11,6 +11,10 @@ import {
   Users,
   CheckCircle
 } from 'lucide-react';
+import equipamentoTesteBase from '@/assets/projects/equipamento-teste-base.jpg';
+import linhaVidaConstrucao from '@/assets/projects/linha-vida-construcao.jpg';
+import construcaoLajeEstrutura from '@/assets/projects/construcao-laje-estrutura.jpg';
+import treinamentoNR12Pratico1 from '@/assets/projects/treinamento-nr12-pratico-1.jpg';
 
 const CaseStudies = () => {
   const cases = [
@@ -35,7 +39,7 @@ const CaseStudies = () => {
       ],
       duration: '3 meses',
       team: '8 especialistas',
-      image: '/src/assets/projects/equipamento-teste-base.jpg'
+      image: equipamentoTesteBase
     },
     {
       id: 2,
@@ -58,7 +62,7 @@ const CaseStudies = () => {
       ],
       duration: '2 meses',
       team: '6 especialistas',
-      image: '/src/assets/projects/linha-vida-construcao.jpg'
+      image: linhaVidaConstrucao
     },
     {
       id: 3,
@@ -81,7 +85,7 @@ const CaseStudies = () => {
       ],
       duration: '1,5 meses',
       team: '4 especialistas',
-      image: '/src/assets/projects/construcao-laje-estrutura.jpg'
+      image: construcaoLajeEstrutura
     },
     {
       id: 4,
@@ -104,7 +108,7 @@ const CaseStudies = () => {
       ],
       duration: '2 meses',
       team: '5 instrutores',
-      image: '/src/assets/projects/treinamento-nr12-pratico-1.jpg'
+      image: treinamentoNR12Pratico1
     }
   ];
 

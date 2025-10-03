@@ -177,11 +177,11 @@ const Gallery = () => {
     },
     {
       id: 'project-18',
-      title: 'Construção de Laje com Estruturas',
-      description: 'Projeto de construção de laje com estruturas metálicas e sistemas de proteção coletiva',
+      title: 'Linha de Vida para Montagem de Formas',
+      description: 'Sistema de linha de vida em obra de construção civil para montagem segura de formas de laje',
       image: construcaoLajeEstrutura,
-      category: 'estrutural',
-      tags: ['laje', 'estrutura', 'construção']
+      category: 'protecao',
+      tags: ['linha de vida', 'formas', 'construção']
     },
     {
       id: 'project-19',
@@ -209,11 +209,11 @@ const Gallery = () => {
     },
     {
       id: 'project-22',
-      title: 'Tripé para Teste de Carga de Ancoragem',
-      description: 'Equipamento tripé metálico para teste de carga em pontos de ancoragem conforme NBR 15835 - capacidade 3.000kgf',
+      title: 'Suporte para Tubo de Linha de Vida',
+      description: 'Sistema de suporte metálico para sustentação de tubo de linha de vida horizontal - estrutura tripé',
       image: testeCargaEquipamentoTripé,
-      category: 'analise',
-      tags: ['tripé', 'teste de carga', 'NBR 15835']
+      category: 'protecao',
+      tags: ['suporte', 'linha de vida', 'estrutura']
     }
   ];
 

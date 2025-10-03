@@ -14,16 +14,6 @@ const Services = () => {
       image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      title: "Treinamentos e Capacitação",
-      description: "Treinamentos de capacitação para operação segura de máquinas e equipamentos, desenvolvidos conforme as Normas Regulamentadoras vigentes.",
-      features: [
-        "Treinamentos de capacitação para operação de máquinas e equipamentos",
-        "Cursos de segurança do trabalho certificados",
-        "Capacitação em NR 11 - Transporte de materiais"
-      ],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-    },
-    {
       title: "Perícia Trabalhista e Previdenciária",
       description: "Assistente Técnico em Perícia Trabalhista e Previdenciária, oferecendo suporte especializado em processos judiciais relacionados à segurança do trabalho e doenças ocupacionais.",
       features: [
@@ -49,8 +39,8 @@ const Services = () => {
       image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      title: "Análise de Risco em Máquinas - NR 12 e NBR 12100",
-      description: "Apreciação de risco em máquinas e equipamentos NR 12 e NBR 12100 na metodologia HRN, com projetos de adequação.",
+      title: "Apreciação de Risco em Máquinas - NR 12 e NBR 12100",
+      description: "Apreciação de risco de máquinas e equipamentos na metodologia HRN - NR12.",
       features: [
         "Apreciação de risco em máquinas e equipamentos",
         "Metodologia HRN (Hazard Rating Number)",

@@ -32,24 +32,6 @@ const About = () => {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">Segurança em primeiro lugar</h4>
-                <p className="text-sm text-muted-foreground">A integridade das pessoas está no centro de tudo o que fazemos</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">Qualidade técnica</h4>
-                <p className="text-sm text-muted-foreground">Entregamos projetos com precisão, sempre alinhados às normas e melhores práticas</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">Inovação</h4>
-                <p className="text-sm text-muted-foreground">Buscamos constantemente soluções modernas e eficazes para nossos clientes</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">Comprometimento</h4>
-                <p className="text-sm text-muted-foreground">Atuamos com responsabilidade, ética e foco em resultados</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

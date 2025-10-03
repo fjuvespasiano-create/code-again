@@ -11,37 +11,17 @@ import {
 const Specializations = () => {
   const consultingServices = [
     {
-      icon: HardHat,
-      title: 'Treinamento de Operação de Máquinas',
-      description: 'Conformidade com NR 11 e NR 12, incluindo procedimentos de operação segura e manutenção preventiva.'
-    },
-    {
       icon: Mountain,
       title: 'Trabalho em Altura (NR 35)',
       description: 'Treinamentos certificados, análise de risco e implementação de sistemas de proteção contra quedas.'
-    },
-    {
-      icon: Building2,
-      title: 'Espaço Confinado (NR 33)',
-      description: 'Procedimentos de entrada, monitoramento atmosférico e treinamento especializado para ambientes confinados.'
     }
   ];
 
   const protectionServices = [
     {
-      icon: FileCheck,
-      title: 'Linha de Vida e Proteção Coletiva',
-      description: 'Projeto completo com memorial de cálculo, ART e instalação de sistemas de proteção contra quedas.'
-    },
-    {
       icon: Wrench,
       title: 'Adequação de Máquinas (NR 12)',
       description: 'Análise de risco HRN, instalação de dispositivos de segurança e adequação à NBR 12100.'
-    },
-    {
-      icon: HardHat,
-      title: 'Sistema de Proteção Individual',
-      description: 'Projeto e implementação de SPIQ (Sistema de Proteção Individual contra Quedas) personalizado.'
     }
   ];
 

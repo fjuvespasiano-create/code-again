@@ -29,16 +29,6 @@ const Services = () => {
       image: "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
     },
     {
-      title: "Projetos de Linha de Vida e Proteção Contra Quedas",
-      description: "Projetos de sistemas de proteção contra quedas, incluindo linhas de vida horizontais e verticais, conforme NR 35 e NBR 15835.",
-      features: [
-        "Projetos de sistemas de proteção contra quedas",
-        "Linhas de vida horizontais e verticais",
-        "Dimensionamento conforme NR 35 e NBR 15835"
-      ],
-      image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-    },
-    {
       title: "Apreciação de Risco em Máquinas - NR 12 e NBR 12100",
       description: "Apreciação de risco de máquinas e equipamentos na metodologia HRN - NR12.",
       features: [

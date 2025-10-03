@@ -56,48 +56,6 @@ const TechnicalStandards = () => {
         'Treinamento de Operadores',
         'Elaboração de Manuais Técnicos'
       ]
-    },
-    {
-      id: 'NR-33',
-      title: 'NR 33 - Segurança e Saúde no Trabalho em Espaços Confinados',
-      icon: Building2,
-      color: 'bg-purple-500',
-      description: 'Estabelece requisitos para reconhecimento, avaliação e controle dos riscos em espaços confinados.',
-      requirements: [
-        'Identificação e sinalização de espaços confinados',
-        'Procedimentos de entrada padronizados',
-        'Monitoramento atmosférico contínuo',
-        'Treinamento específico para trabalhadores e supervisores',
-        'Sistema de comunicação e resgate'
-      ],
-      services: [
-        'Elaboração de Procedimentos de Entrada',
-        'Treinamento Supervisor e Trabalhador Autorizado',
-        'Projeto de Sistema de Ventilação',
-        'Monitoramento Atmosférico',
-        'Plano de Resgate e Emergência'
-      ]
-    },
-    {
-      id: 'NR-11',
-      title: 'NR 11 - Transporte, Movimentação e Manuseio de Materiais',
-      icon: HardHat,
-      color: 'bg-green-500',
-      description: 'Estabelece requisitos de segurança para operação de equipamentos de transporte motorizado e elevação.',
-      requirements: [
-        'Operadores habilitados e certificados',
-        'Inspeção técnica periódica de equipamentos',
-        'Procedimentos operacionais padronizados',
-        'Sinalização e isolamento de áreas',
-        'Manutenção preventiva programada'
-      ],
-      services: [
-        'Habilitação de Operadores',
-        'Inspeção Técnica de Equipamentos',
-        'Elaboração de POPs Operacionais',
-        'Projeto de Sinalização',
-        'Programa de Manutenção Preventiva'
-      ]
     }
   ];
 

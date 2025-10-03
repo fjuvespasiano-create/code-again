@@ -64,8 +64,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'E-mail',
-      content: 'contato@a1engenharia.com.br',
-      link: 'mailto:contato@a1engenharia.com.br'
+      content: 'contato@a+engenharia.com.br',
+      link: 'mailto:contato@a+engenharia.com.br'
     },
     {
       icon: MapPin,

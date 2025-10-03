@@ -152,10 +152,10 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 opacity-80" />
                 <a 
-                  href="mailto:contato@a1engenharia.com.br" 
+                  href="mailto:contato@a+engenharia.com.br" 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  contato@a1engenharia.com.br
+                  contato@a+engenharia.com.br
                 </a>
               </div>
               <div className="flex items-start gap-3">
@@ -239,7 +239,7 @@ const Footer = () => {
               "addressRegion": "MG"
             },
             "telephone": "+5531999591842",
-            "email": "contato@a1engenharia.com.br",
+            "email": "contato@a+engenharia.com.br",
             "serviceType": [
               "Consultoria em Segurança e Saúde Ocupacional",
               "Treinamentos e Capacitação",

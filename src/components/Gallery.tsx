@@ -49,11 +49,11 @@ const Gallery = () => {
     },
     {
       id: 'project-2',
-      title: 'Treinamento NR 12 - Prática com Munck',
-      description: 'Treinamento prático para operação segura de caminhão munck conforme normas de segurança',
+      title: 'Treinamento de Operação de Munck',
+      description: 'Treinamento prático para operação segura de caminhão munck com instrução em campo',
       image: treinamentoNR12Pratico1,
       category: 'treinamentos',
-      tags: ['NR12', 'munck', 'prática']
+      tags: ['munck', 'operação', 'prática']
     },
     {
       id: 'project-3',

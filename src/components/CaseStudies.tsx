@@ -20,25 +20,25 @@ const CaseStudies = () => {
   const cases = [
     {
       id: 1,
-      title: 'Adequação NR 12 - Indústria Metalúrgica',
+      title: 'Sistema de Suporte de Sustentação de Linha de Vida',
       sector: 'Industrial',
-      client: 'Metalúrgica Vale do Aço',
+      client: 'Complexo Industrial ES',
       icon: Factory,
-      challenge: 'Adequação de 45 máquinas e equipamentos conforme NR 12, incluindo prensas hidráulicas, tornos CNC e equipamentos de soldagem.',
+      challenge: 'Desenvolvimento e instalação de sistema completo de suporte de sustentação para tubos de linha de vida em área industrial de 8.000m².',
       solution: [
-        'Análise de risco HRN em 100% dos equipamentos',
-        'Instalação de 180 dispositivos de segurança',
-        'Treinamento de 75 operadores',
-        'Elaboração de 45 manuais técnicos'
+        'Projeto estrutural de suportes metálicos customizados',
+        'Instalação de 85 pontos de fixação de tubos',
+        'Sistema de linha de vida horizontal contínua',
+        'Teste de carga em todos os pontos conforme NBR 15835'
       ],
       results: [
-        '100% de conformidade regulatória',
-        '85% de redução em acidentes',
-        '60 dias de prazo de execução',
-        'R$ 450.000 em investimento'
+        '100% de conformidade com NR 35',
+        'Certificação técnica com ART',
+        '45 dias de prazo de execução',
+        'Sistema testado para 3.000kgf'
       ],
-      duration: '3 meses',
-      team: '8 especialistas',
+      duration: '2 meses',
+      team: '6 especialistas',
       image: equipamentoTesteBase
     },
     {
@@ -89,21 +89,21 @@ const CaseStudies = () => {
     },
     {
       id: 4,
-      title: 'Treinamento Corporativo - Rede de Varejo',
+      title: 'Treinamento de Operação de Munck - Rede de Varejo',
       sector: 'Varejo',
       client: 'SuperMercados BH',
       icon: Home,
-      challenge: 'Capacitação de equipes para operação segura de equipamentos de movimentação em 15 lojas.',
+      challenge: 'Capacitação de equipes para operação segura de caminhão munck em 15 lojas da rede.',
       solution: [
-        'Treinamento NR 11 para 200 funcionários',
-        'Elaboração de POPs específicos',
+        'Treinamento prático de operação de munck',
+        'Elaboração de POPs específicos para cada operação',
         'Certificação de 45 operadores',
         'Programa de reciclagem anual'
       ],
       results: [
-        '200 funcionários capacitados',
-        '90% de aprovação nos testes',
-        '15 lojas certificadas',
+        '45 operadores certificados',
+        '90% de aprovação nos testes práticos',
+        '15 lojas atendidas',
         'Redução de 70% em incidentes'
       ],
       duration: '2 meses',

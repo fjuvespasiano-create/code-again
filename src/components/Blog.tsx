@@ -7,16 +7,16 @@ const Blog = () => {
   const posts = [
     {
       id: 1,
-      title: 'NR 12: Adequação de Máquinas e Equipamentos - Guia Completo 2025',
-      excerpt: 'Entenda as principais mudanças na NR 12 e como adequar suas máquinas para total conformidade...',
+      title: 'Apreciação de Risco em Máquinas: Metodologia HRN na Prática',
+      excerpt: 'Entenda como aplicar a metodologia HRN para apreciação de risco conforme NR 12 e NBR 12100...',
       image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200',
       date: '14 de jan. de 2025',
       category: 'NR 12'
     },
     {
       id: 2,
-      title: 'Trabalho em Altura: Como Implementar a NR 35 na Prática',
-      excerpt: 'Procedimentos essenciais e equipamentos obrigatórios para trabalhos em altura seguros...',
+      title: 'Sistemas de Linha de Vida: Projeto e Dimensionamento',
+      excerpt: 'Conheça os requisitos técnicos para projeto de sistemas de linha de vida horizontal e vertical...',
       image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200',
       date: '07 de jan. de 2025',
       category: 'NR 35'

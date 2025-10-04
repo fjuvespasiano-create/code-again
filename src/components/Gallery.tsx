@@ -89,11 +89,11 @@ const Gallery = () => {
     },
     {
       id: 'project-7',
-      title: 'Sistema de Ancoragem - Trabalho em Altura',
-      description: 'Aplicação prática de sistema de proteção contra quedas em taludes de grande altura',
+      title: 'Trabalho em Altura em Taludes',
+      description: 'Trabalho em altura realizado em taludes com sistema de ancoragem e proteção contra quedas',
       image: ancoragemTaludesUso2,
       category: 'protecao',
-      tags: ['altura', 'ancoragem', 'segurança']
+      tags: ['altura', 'taludes', 'ancoragem']
     },
     {
       id: 'project-8',

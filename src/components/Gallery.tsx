@@ -81,14 +81,6 @@ const Gallery = () => {
     },
     {
       id: 'project-6',
-      title: 'Acesso Seguro em Taludes - Área Aquática',
-      description: 'Utilização de sistema de ancoragem para trabalhos seguros próximos a corpos d\'água',
-      image: ancoragemTaludesUso1,
-      category: 'protecao',
-      tags: ['taludes', 'água', 'rapel']
-    },
-    {
-      id: 'project-7',
       title: 'Trabalho em Altura em Taludes',
       description: 'Trabalho em altura realizado em taludes com sistema de ancoragem e proteção contra quedas',
       image: ancoragemTaludesUso2,
@@ -96,15 +88,15 @@ const Gallery = () => {
       tags: ['altura', 'taludes', 'ancoragem']
     },
     {
-      id: 'project-8',
-      title: 'Trabalho em Área Vegetada',
-      description: 'Execução de serviços especializados em áreas com vegetação densa utilizando EPIs adequados',
-      image: ancoragemTaludesUso3,
+      id: 'project-7',
+      title: 'Acesso Seguro em Taludes - Área Aquática',
+      description: 'Utilização de sistema de ancoragem para trabalhos seguros próximos a corpos d\'água',
+      image: ancoragemTaludesUso1,
       category: 'protecao',
-      tags: ['vegetação', 'EPI', 'campo']
+      tags: ['taludes', 'água', 'rapel']
     },
     {
-      id: 'project-9',
+      id: 'project-8',
       title: 'Teste de Carga e Tagueamento',
       description: 'Teste de resistência e certificação de pontos de ancoragem com dinamômetro analógico cap. 3.000kgf',
       image: testeCargaTagueamento,
@@ -112,7 +104,7 @@ const Gallery = () => {
       tags: ['teste de carga', 'ancoragem', 'certificação']
     },
     {
-      id: 'project-10',
+      id: 'project-9',
       title: 'Material para Instalação de Pontos de Ancoragem',
       description: 'Parabolt Inox 12mm, olhal inox, barra rosqueada 15mm e conjunto padrão para instalação',
       image: materialInstalacao,
@@ -120,7 +112,7 @@ const Gallery = () => {
       tags: ['parabolt', 'inox', 'instalação']
     },
     {
-      id: 'project-11',
+      id: 'project-10',
       title: 'Ponto de Ancoragem Instalado',
       description: 'Ponto de ancoragem instalado em fachada de edifício com sistema de segurança contra quedas',
       image: pontoAnoragemInstalado,
@@ -128,7 +120,7 @@ const Gallery = () => {
       tags: ['fachada', 'ancoragem', 'altura']
     },
     {
-      id: 'project-12',
+      id: 'project-11',
       title: 'Equipamento de Teste de Carga',
       description: 'Dinamômetro analógico com capacidade de 3.000kgf para teste de ancoragem predial',
       image: testeCargaEquipamento,
@@ -136,12 +128,20 @@ const Gallery = () => {
       tags: ['dinamômetro', 'teste', 'equipamento']
     },
     {
-      id: 'project-13',
-      title: 'Linha de Vida para Montagem de Laje',
-      description: 'Sistema de linha de vida horizontal para proteção de trabalhadores em obra de construção civil',
-      image: linhaVidaLaje,
+      id: 'project-12',
+      title: 'Linha de Vida para Montagem de Formas',
+      description: 'Linha de vida em obra de construção civil para montagem de formas de laje com estruturas metálicas',
+      image: construcaoLajeEstrutura,
       category: 'protecao',
-      tags: ['linha de vida', 'laje', 'construção']
+      tags: ['linha de vida', 'formas', 'laje']
+    },
+    {
+      id: 'project-13',
+      title: 'Linha de Vida Horizontal em Construção',
+      description: 'Sistema de linha de vida horizontal instalado para proteção de trabalhadores em obra',
+      image: linhaVidaConstrucao,
+      category: 'protecao',
+      tags: ['linha de vida', 'horizontal', 'obra']
     },
     {
       id: 'project-14',
@@ -153,14 +153,6 @@ const Gallery = () => {
     },
     {
       id: 'project-15',
-      title: 'Trabalho em Altura em Talude',
-      description: 'Trabalho em altura realizado em talude com limpeza de vegetação e equipamentos de proteção individual',
-      image: limpezaVegetacaoEpi,
-      category: 'protecao',
-      tags: ['talude', 'altura', 'EPI']
-    },
-    {
-      id: 'project-16',
       title: 'Sistema de Proteção em Altura Urbana',
       description: 'Implementação de sistema de proteção contra quedas em ambiente urbano com vista panorâmica',
       image: protecaoAlturaUrbana,
@@ -168,23 +160,7 @@ const Gallery = () => {
       tags: ['altura', 'urbano', 'proteção']
     },
     {
-      id: 'project-17',
-      title: 'Linha de Vida Horizontal em Construção',
-      description: 'Sistema de linha de vida horizontal instalado para proteção de trabalhadores em obra',
-      image: linhaVidaConstrucao,
-      category: 'protecao',
-      tags: ['linha de vida', 'horizontal', 'obra']
-    },
-    {
-      id: 'project-18',
-      title: 'Linha de Vida para Montagem de Formas',
-      description: 'Linha de vida em obra de construção civil para montagem de formas de laje com estruturas metálicas',
-      image: construcaoLajeEstrutura,
-      category: 'protecao',
-      tags: ['linha de vida', 'formas', 'laje']
-    },
-    {
-      id: 'project-19',
+      id: 'project-16',
       title: 'Desenvolvimento de Edifícios',
       description: 'Acompanhamento técnico de desenvolvimento de edifícios residenciais e comerciais',
       image: edificiosConstrucao,
@@ -192,7 +168,7 @@ const Gallery = () => {
       tags: ['edifícios', 'desenvolvimento', 'técnico']
     },
     {
-      id: 'project-20',
+      id: 'project-17',
       title: 'Trabalho em Área Úmida',
       description: 'Execução de serviços especializados em áreas úmidas com equipamentos de proteção adequados',
       image: trabalhoAreaUmida,
@@ -200,15 +176,7 @@ const Gallery = () => {
       tags: ['área úmida', 'EPI', 'serviços']
     },
     {
-      id: 'project-21',
-      title: 'Base de Equipamento de Teste',
-      description: 'Instalação e configuração de base para equipamentos de teste de carga e ancoragem',
-      image: equipamentoTesteBase,
-      category: 'analise',
-      tags: ['base', 'equipamento', 'teste']
-    },
-    {
-      id: 'project-22',
+      id: 'project-18',
       title: 'Suporte para Tubo de Linha de Vida',
       description: 'Sistema de suporte metálico para sustentação de tubo de linha de vida horizontal - estrutura tripé',
       image: testeCargaEquipamentoTripé,

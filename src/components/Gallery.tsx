@@ -153,11 +153,11 @@ const Gallery = () => {
     },
     {
       id: 'project-15',
-      title: 'Limpeza e Manutenção com EPIs',
-      description: 'Serviços de limpeza e manutenção em áreas de vegetação utilizando equipamentos de proteção adequados',
+      title: 'Trabalho em Altura em Talude',
+      description: 'Trabalho em altura realizado em talude com limpeza de vegetação e equipamentos de proteção individual',
       image: limpezaVegetacaoEpi,
       category: 'protecao',
-      tags: ['limpeza', 'EPI', 'manutenção']
+      tags: ['talude', 'altura', 'EPI']
     },
     {
       id: 'project-16',

@@ -178,10 +178,10 @@ const Gallery = () => {
     {
       id: 'project-18',
       title: 'Linha de Vida para Montagem de Formas',
-      description: 'Sistema de linha de vida em obra de construção civil para montagem segura de formas de laje',
+      description: 'Linha de vida em obra de construção civil para montagem de formas de laje com estruturas metálicas',
       image: construcaoLajeEstrutura,
       category: 'protecao',
-      tags: ['linha de vida', 'formas', 'construção']
+      tags: ['linha de vida', 'formas', 'laje']
     },
     {
       id: 'project-19',

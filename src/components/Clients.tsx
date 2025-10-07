@@ -1,11 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import epoLogo from '@/assets/clients/epo-logo.png';
-import phvLogo from '@/assets/clients/phv-logo.png';
-import valeLogo from '@/assets/clients/vale-logo.png';
+import phvLogo from '@/assets/clients/phv-logo-new.jpg';
+import valeLogo from '@/assets/clients/vale-logo-new.png';
 import terrabelLogo from '@/assets/clients/terrabel-logo.png';
 import sesiLogo from '@/assets/clients/sesi-logo.png';
 import sadaLogo from '@/assets/clients/sada-logo.png';
-import agmarLogo from '@/assets/clients/agmar-logo.png';
+import agmarLogo from '@/assets/clients/agmar-logo-new.png';
 import caparaoLogo from '@/assets/clients/caparao-logo.png';
 
 const Clients = () => {

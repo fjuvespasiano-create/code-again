@@ -1,10 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, LogIn } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import heroEngineers from '@/assets/hero-engineers.png';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { content: title } = useSiteContent('hero_title');
+  const { content: subtitle } = useSiteContent('hero_subtitle');
+  const { content: ctaPrimary } = useSiteContent('hero_cta_primary');
+  const { content: ctaSecondary } = useSiteContent('hero_cta_secondary');
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -32,18 +37,17 @@ const Hero = () => {
           {/* Left content */}
           <div>
             <h1 className="heading-display text-foreground mb-6">
-              Soluções Completas em <span className="text-primary">Engenharia</span> e <span className="text-primary">Segurança</span>
+              {title || 'Soluções Completas em Engenharia e Segurança'}
             </h1>
             <p className="body-lg text-muted-foreground mb-8">
-              Consultoria, projetos e treinamentos especializados para empresas de médio e grande porte.
-              Protegemos vidas e otimizamos processos industriais com qualidade técnica e segurança.
+              {subtitle || 'Consultoria, projetos e treinamentos especializados para empresas de médio e grande porte. Protegemos vidas e otimizamos processos industriais com qualidade técnica e segurança.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="gradient-primary text-white font-semibold px-8 py-6 text-lg" onClick={() => scrollToSection('contato')}>
-                Solicite seu Orçamento
+                {ctaPrimary || 'Solicite seu Orçamento'}
               </Button>
               <Button variant="outline" className="px-8 py-6 text-lg" onClick={() => scrollToSection('servicos')}>
-                Nossos Serviços
+                {ctaSecondary || 'Nossos Serviços'}
               </Button>
             </div>
           </div>

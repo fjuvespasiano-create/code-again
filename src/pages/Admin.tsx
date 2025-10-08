@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, LogOut } from 'lucide-react';
+import ContentEditor from '@/components/admin/ContentEditor';
 
 interface SiteSection {
   id: string;
@@ -25,9 +27,20 @@ interface Service {
   display_order: number;
 }
 
+interface SiteContent {
+  id: string;
+  content_key: string;
+  content_type: string;
+  section: string;
+  label: string;
+  value: string;
+  default_value: string;
+}
+
 const Admin = () => {
   const [sections, setSections] = useState<SiteSection[]>([]);
   const [services, setServices] = useState<Service[]>([]);
+  const [siteContent, setSiteContent] = useState<SiteContent[]>([]);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const navigate = useNavigate();
@@ -37,6 +50,7 @@ const Admin = () => {
     checkAuth();
     loadSections();
     loadServices();
+    loadSiteContent();
   }, []);
 
   const checkAuth = async () => {
@@ -93,6 +107,23 @@ const Admin = () => {
       setServices(data);
     }
     setLoading(false);
+  };
+
+  const loadSiteContent = async () => {
+    const { data, error } = await supabase
+      .from('site_content')
+      .select('*')
+      .order('section, label');
+
+    if (error) {
+      toast({
+        title: "Erro ao carregar conteúdo",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else if (data) {
+      setSiteContent(data);
+    }
   };
 
   const toggleSection = async (sectionId: string, currentValue: boolean) => {
@@ -168,55 +199,69 @@ const Admin = () => {
           </Button>
         </div>
 
-        <div className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Controle de Seções</CardTitle>
-              <CardDescription>
-                Ative ou desative as seções do site que serão exibidas aos visitantes
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {sections.map((section) => (
-                <div key={section.id} className="flex items-center justify-between p-4 border rounded-lg">
-                  <Label htmlFor={section.section_key} className="font-medium cursor-pointer">
-                    {section.section_name}
-                  </Label>
-                  <Switch
-                    id={section.section_key}
-                    checked={section.is_visible}
-                    onCheckedChange={() => toggleSection(section.id, section.is_visible)}
-                    disabled={updating}
-                  />
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+        <Tabs defaultValue="sections" className="w-full">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="sections">Seções</TabsTrigger>
+            <TabsTrigger value="services">Serviços</TabsTrigger>
+            <TabsTrigger value="content">Conteúdo</TabsTrigger>
+          </TabsList>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Controle de Serviços</CardTitle>
-              <CardDescription>
-                Ative ou desative os serviços individuais que serão exibidos aos visitantes
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {services.map((service) => (
-                <div key={service.id} className="flex items-center justify-between p-4 border rounded-lg">
-                  <Label htmlFor={service.service_key} className="font-medium cursor-pointer">
-                    {service.service_name}
-                  </Label>
-                  <Switch
-                    id={service.service_key}
-                    checked={service.is_visible}
-                    onCheckedChange={() => toggleService(service.id, service.is_visible)}
-                    disabled={updating}
-                  />
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </div>
+          <TabsContent value="sections" className="mt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Controle de Seções</CardTitle>
+                <CardDescription>
+                  Ative ou desative as seções do site que serão exibidas aos visitantes
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {sections.map((section) => (
+                  <div key={section.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    <Label htmlFor={section.section_key} className="font-medium cursor-pointer">
+                      {section.section_name}
+                    </Label>
+                    <Switch
+                      id={section.section_key}
+                      checked={section.is_visible}
+                      onCheckedChange={() => toggleSection(section.id, section.is_visible)}
+                      disabled={updating}
+                    />
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="services" className="mt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Controle de Serviços</CardTitle>
+                <CardDescription>
+                  Ative ou desative os serviços individuais que serão exibidos aos visitantes
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {services.map((service) => (
+                  <div key={service.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    <Label htmlFor={service.service_key} className="font-medium cursor-pointer">
+                      {service.service_name}
+                    </Label>
+                    <Switch
+                      id={service.service_key}
+                      checked={service.is_visible}
+                      onCheckedChange={() => toggleService(service.id, service.is_visible)}
+                      disabled={updating}
+                    />
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="content" className="mt-6">
+            <ContentEditor content={siteContent} onContentUpdated={loadSiteContent} />
+          </TabsContent>
+        </Tabs>
 
         <div className="mt-6 p-4 border rounded-lg bg-muted/50">
           <p className="text-sm text-muted-foreground">

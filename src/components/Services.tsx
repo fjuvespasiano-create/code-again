@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from '@/integrations/supabase/client';
+import { useSiteContent } from '@/hooks/useSiteContent';
 
 interface Service {
   id: string;
@@ -18,6 +19,8 @@ interface Service {
 const Services = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
+  const { content: servicesTitle } = useSiteContent('services_title');
+  const { content: servicesDescription } = useSiteContent('services_description');
 
   useEffect(() => {
     loadServices();
@@ -80,9 +83,11 @@ const Services = () => {
     <section id="servicos" className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Nossos Serviços</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            {servicesTitle || 'Nossos Serviços'}
+          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos soluções completas em três áreas principais, com expertise técnica e conformidade regulatória total.
+            {servicesDescription || 'Oferecemos soluções completas em três áreas principais, com expertise técnica e conformidade regulatória total.'}
           </p>
         </div>
 

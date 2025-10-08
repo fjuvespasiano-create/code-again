@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      services: {
+        Row: {
+          created_at: string
+          description: string
+          display_order: number
+          features: Json
+          id: string
+          image_url: string | null
+          is_visible: boolean
+          service_key: string
+          service_name: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          display_order?: number
+          features?: Json
+          id?: string
+          image_url?: string | null
+          is_visible?: boolean
+          service_key: string
+          service_name: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          display_order?: number
+          features?: Json
+          id?: string
+          image_url?: string | null
+          is_visible?: boolean
+          service_key?: string
+          service_name?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       site_sections: {
         Row: {
           id: string

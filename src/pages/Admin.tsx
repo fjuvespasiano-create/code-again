@@ -16,8 +16,18 @@ interface SiteSection {
   is_visible: boolean;
 }
 
+interface Service {
+  id: string;
+  service_key: string;
+  service_name: string;
+  title: string;
+  is_visible: boolean;
+  display_order: number;
+}
+
 const Admin = () => {
   const [sections, setSections] = useState<SiteSection[]>([]);
+  const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const navigate = useNavigate();
@@ -26,6 +36,7 @@ const Admin = () => {
   useEffect(() => {
     checkAuth();
     loadSections();
+    loadServices();
   }, []);
 
   const checkAuth = async () => {
@@ -49,7 +60,6 @@ const Admin = () => {
   };
 
   const loadSections = async () => {
-    setLoading(true);
     const { data, error } = await supabase
       .from('site_sections')
       .select('*')
@@ -63,6 +73,24 @@ const Admin = () => {
       });
     } else if (data) {
       setSections(data);
+    }
+  };
+
+  const loadServices = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from('services')
+      .select('*')
+      .order('display_order');
+
+    if (error) {
+      toast({
+        title: "Erro ao carregar serviços",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else if (data) {
+      setServices(data);
     }
     setLoading(false);
   };
@@ -86,6 +114,29 @@ const Admin = () => {
         description: "A visibilidade da seção foi alterada com sucesso.",
       });
       loadSections();
+    }
+    setUpdating(false);
+  };
+
+  const toggleService = async (serviceId: string, currentValue: boolean) => {
+    setUpdating(true);
+    const { error } = await supabase
+      .from('services')
+      .update({ is_visible: !currentValue })
+      .eq('id', serviceId);
+
+    if (error) {
+      toast({
+        title: "Erro ao atualizar serviço",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Serviço atualizado",
+        description: "A visibilidade do serviço foi alterada com sucesso.",
+      });
+      loadServices();
     }
     setUpdating(false);
   };
@@ -117,29 +168,55 @@ const Admin = () => {
           </Button>
         </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Controle de Seções</CardTitle>
-            <CardDescription>
-              Ative ou desative as seções do site que serão exibidas aos visitantes
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {sections.map((section) => (
-              <div key={section.id} className="flex items-center justify-between p-4 border rounded-lg">
-                <Label htmlFor={section.section_key} className="font-medium cursor-pointer">
-                  {section.section_name}
-                </Label>
-                <Switch
-                  id={section.section_key}
-                  checked={section.is_visible}
-                  onCheckedChange={() => toggleSection(section.id, section.is_visible)}
-                  disabled={updating}
-                />
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Controle de Seções</CardTitle>
+              <CardDescription>
+                Ative ou desative as seções do site que serão exibidas aos visitantes
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {sections.map((section) => (
+                <div key={section.id} className="flex items-center justify-between p-4 border rounded-lg">
+                  <Label htmlFor={section.section_key} className="font-medium cursor-pointer">
+                    {section.section_name}
+                  </Label>
+                  <Switch
+                    id={section.section_key}
+                    checked={section.is_visible}
+                    onCheckedChange={() => toggleSection(section.id, section.is_visible)}
+                    disabled={updating}
+                  />
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Controle de Serviços</CardTitle>
+              <CardDescription>
+                Ative ou desative os serviços individuais que serão exibidos aos visitantes
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {services.map((service) => (
+                <div key={service.id} className="flex items-center justify-between p-4 border rounded-lg">
+                  <Label htmlFor={service.service_key} className="font-medium cursor-pointer">
+                    {service.service_name}
+                  </Label>
+                  <Switch
+                    id={service.service_key}
+                    checked={service.is_visible}
+                    onCheckedChange={() => toggleService(service.id, service.is_visible)}
+                    disabled={updating}
+                  />
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
 
         <div className="mt-6 p-4 border rounded-lg bg-muted/50">
           <p className="text-sm text-muted-foreground">

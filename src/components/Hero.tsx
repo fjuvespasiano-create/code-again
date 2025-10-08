@@ -1,8 +1,11 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, LogIn } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import heroEngineers from '@/assets/hero-engineers.png';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -14,6 +17,17 @@ const Hero = () => {
   return (
     <section id="inicio" className="py-16 md:py-24 bg-gradient-to-b from-muted/40 to-background">
       <div className="container mx-auto px-4">
+        <div className="flex justify-end mb-4">
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={() => navigate('/login')}
+            className="text-muted-foreground hover:text-primary"
+          >
+            <LogIn className="mr-2 h-4 w-4" />
+            Admin
+          </Button>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div>

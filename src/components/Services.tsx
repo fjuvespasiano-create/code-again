@@ -1,54 +1,80 @@
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { supabase } from '@/integrations/supabase/client';
+
+interface Service {
+  id: string;
+  service_key: string;
+  service_name: string;
+  title: string;
+  description: string;
+  features: string[];
+  image_url: string;
+  is_visible: boolean;
+  display_order: number;
+}
 
 const Services = () => {
-  const services = [
-    {
-      title: "Consultoria em Segurança e Saúde Ocupacional",
-      description: "Consultoria especializada em Engenharia de Segurança e Saúde Ocupacional, oferecendo soluções completas para conformidade regulatória e prevenção de acidentes de trabalho.",
-      features: [
-        "Consultoria especializada em Engenharia de Segurança e Saúde Ocupacional",
-        "Avaliação e adequação às Normas Regulamentadoras",
-        "Programas de prevenção de acidentes de trabalho"
-      ],
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-    },
-    {
-      title: "Perícia Trabalhista e Previdenciária",
-      description: "Assistente Técnico em Perícia Trabalhista e Previdenciária, oferecendo suporte especializado em processos judiciais relacionados à segurança do trabalho e doenças ocupacionais.",
-      features: [
-        "Assistente Técnico em Perícia Trabalhista e Previdenciária",
-        "Análise técnica de acidentes de trabalho e doenças ocupacionais",
-        "Elaboração de pareceres técnicos fundamentados",
-        "Vistoria técnica em locais de trabalho",
-        "Análise de nexo causal entre trabalho e doença/acidente",
-        "Avaliação de insalubridade e periculosidade",
-        "Perícias em aposentadoria especial",
-        "Contestação de laudos periciais"
-      ],
-      image: "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-    },
-    {
-      title: "Apreciação de Risco em Máquinas - NR 12 e NBR 12100",
-      description: "Apreciação de risco de máquinas e equipamentos na metodologia HRN - NR12.",
-      features: [
-        "Apreciação de risco em máquinas e equipamentos",
-        "Metodologia HRN (Hazard Rating Number)",
-        "Projetos de adequação conforme NR 12"
-      ],
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-    },
-    {
-      title: "Projetos Estruturais",
-      description: "Engenharia estrutural em aço e madeira com memorial de cálculo detalhado",
-      features: [
-        "Projetos estruturais em aço e madeira",
-        "Memorial de cálculo detalhado",
-        "Análise estrutural completa"
-      ],
-      image: "https://images.unsplash.com/photo-1503387837-b154d5074bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
+  const [services, setServices] = useState<Service[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadServices();
+    
+    // Subscribe to realtime changes
+    const channel = supabase
+      .channel('services_changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'services'
+        },
+        () => {
+          loadServices();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
+  const loadServices = async () => {
+    const { data, error } = await supabase
+      .from('services')
+      .select('*')
+      .eq('is_visible', true)
+      .order('display_order');
+
+    if (!error && data) {
+      const formattedServices = data.map(service => ({
+        ...service,
+        features: Array.isArray(service.features) ? service.features : []
+      }));
+      setServices(formattedServices as Service[]);
     }
-  ];
+    setLoading(false);
+  };
+
+  if (loading) {
+    return (
+      <section id="servicos" className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="text-center">
+            <p className="text-muted-foreground">Carregando serviços...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (services.length === 0) {
+    return null;
+  }
 
   return (
     <section id="servicos" className="py-16 px-4 bg-gray-50">
@@ -61,11 +87,11 @@ const Services = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+          {services.map((service) => (
+            <Card key={service.id} className="bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div className="aspect-video overflow-hidden rounded-t-lg">
                 <img
-                  src={service.image}
+                  src={service.image_url}
                   alt={service.title}
                   className="w-full h-full object-cover"
                 />

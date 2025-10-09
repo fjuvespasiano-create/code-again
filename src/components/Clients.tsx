@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import epoLogo from '@/assets/clients/epo-logo.png';
 import phvLogo from '@/assets/clients/phv-logo-new.jpg';
 import valeLogo from '@/assets/clients/vale-logo-new.png';
@@ -65,13 +66,16 @@ const Clients = () => {
     { number: '5★', label: 'Avaliação Média' }
   ];
 
+  const title = useSiteContent('clients_title');
+  const subtitle = useSiteContent('clients_subtitle');
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="heading-xl text-foreground mb-4">Empresas que Confiam em Nós</h2>
+          <h2 className="heading-xl text-foreground mb-4">{title || 'Empresas que Confiam em Nós'}</h2>
           <p className="body-lg text-muted-foreground">
-            Orgulhamos-nos de trabalhar com empresas líderes em diversos setores industriais
+            {subtitle || 'Orgulhamos-nos de trabalhar com empresas líderes em diversos setores industriais'}
           </p>
         </div>
 

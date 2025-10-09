@@ -6,10 +6,10 @@ import heroEngineers from '@/assets/hero-engineers.png';
 
 const Hero = () => {
   const navigate = useNavigate();
-  const { content: title } = useSiteContent('hero_title');
-  const { content: subtitle } = useSiteContent('hero_subtitle');
-  const { content: ctaPrimary } = useSiteContent('hero_cta_primary');
-  const { content: ctaSecondary } = useSiteContent('hero_cta_secondary');
+  const title = useSiteContent('hero_title');
+  const subtitle = useSiteContent('hero_subtitle');
+  const ctaPrimary = useSiteContent('hero_cta_primary');
+  const ctaSecondary = useSiteContent('hero_cta_secondary');
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

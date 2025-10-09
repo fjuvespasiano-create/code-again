@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
-export const useSiteContent = (contentKey: string) => {
+export const useSiteContent = (contentKey: string): string => {
   const [content, setContent] = useState('');
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadContent();
@@ -35,13 +34,12 @@ export const useSiteContent = (contentKey: string) => {
       .from('site_content')
       .select('value')
       .eq('content_key', contentKey)
-      .single();
+      .maybeSingle();
 
     if (!error && data) {
       setContent(data.value);
     }
-    setLoading(false);
   };
 
-  return { content, loading };
+  return content;
 };

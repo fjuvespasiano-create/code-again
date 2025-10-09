@@ -19,8 +19,8 @@ interface Service {
 const Services = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
-  const { content: servicesTitle } = useSiteContent('services_title');
-  const { content: servicesDescription } = useSiteContent('services_description');
+  const servicesTitle = useSiteContent('services_title');
+  const servicesDescription = useSiteContent('services_description');
 
   useEffect(() => {
     loadServices();

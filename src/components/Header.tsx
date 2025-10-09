@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ExternalLink } from 'lucide-react';
+import { useSiteContent } from '@/hooks/useSiteContent';
 
 const Header = () => {
+  const logo = useSiteContent('header_logo');
+  const ctaPrimary = useSiteContent('header_cta_primary');
+  const ctaSecondary = useSiteContent('header_cta_secondary');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -44,7 +48,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
-              src="/logo-a1.png" 
+              src={logo || "/logo-a1.png"} 
               alt="A+ Engenharia & Segurança Ocupacional" 
               className="h-12 w-auto"
             />
@@ -69,7 +73,7 @@ const Header = () => {
               className="gradient-primary text-white font-medium"
               onClick={() => scrollToSection('contato')}
             >
-              Solicite um Orçamento
+              {ctaPrimary || 'Solicite um Orçamento'}
             </Button>
           </div>
 
@@ -84,7 +88,7 @@ const Header = () => {
               <div className="flex flex-col gap-6 pt-6">
                 <div className="flex items-center gap-3">
                   <img 
-                    src="/logo-a1.png" 
+                    src={logo || "/logo-a1.png"} 
                     alt="A+ Engenharia & Segurança Ocupacional" 
                     className="h-10 w-auto"
                   />
@@ -108,13 +112,13 @@ const Header = () => {
                     onClick={() => scrollToSection('contato')}
                     className="w-full"
                   >
-                    Solicitar Orçamento
+                    {ctaPrimary || 'Solicitar Orçamento'}
                   </Button>
                   <Button
                     className="gradient-primary text-white w-full"
                     onClick={() => scrollToSection('contato')}
                   >
-                    Fale Conosco
+                    {ctaSecondary || 'Fale Conosco'}
                   </Button>
                 </div>
               </div>

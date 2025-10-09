@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -17,6 +18,14 @@ import {
 } from 'lucide-react';
 
 const Contact = () => {
+  const title = useSiteContent('contact_title');
+  const subtitle = useSiteContent('contact_subtitle');
+  const formTitle = useSiteContent('contact_form_title');
+  const emergencyTitle = useSiteContent('contact_emergency_title');
+  const emergencySubtitle = useSiteContent('contact_emergency_subtitle');
+  const infoTitle = useSiteContent('contact_info_title');
+  const quickActionsTitle = useSiteContent('contact_quick_actions_title');
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -118,11 +127,10 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
           <h2 className="heading-xl text-primary mb-4">
-            Entre em Contato
+            {title || 'Entre em Contato'}
           </h2>
           <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
-            Estamos prontos para desenvolver soluções personalizadas para sua empresa. 
-            Entre em contato e converse com nossos especialistas.
+            {subtitle || 'Estamos prontos para desenvolver soluções personalizadas para sua empresa. Entre em contato e converse com nossos especialistas.'}
           </p>
         </div>
 
@@ -132,7 +140,7 @@ const Contact = () => {
             <Card className="gradient-card border-0 shadow-card">
               <CardHeader>
                 <CardTitle className="heading-lg text-primary">
-                  Solicite um Orçamento
+                  {formTitle || 'Solicite um Orçamento'}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -234,7 +242,7 @@ const Contact = () => {
             <Card className="gradient-card border-0 shadow-card">
               <CardHeader>
                 <CardTitle className="heading-md text-primary">
-                  Informações de Contato
+                  {infoTitle || 'Informações de Contato'}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -265,7 +273,7 @@ const Contact = () => {
             <Card className="gradient-card border-0 shadow-card">
               <CardHeader>
                 <CardTitle className="heading-md text-primary">
-                  Ações Rápidas
+                  {quickActionsTitle || 'Ações Rápidas'}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -298,8 +306,8 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="heading-md text-primary">Atendimento de Emergência</h3>
-                  <p className="text-muted-foreground">Disponível 24h para casos urgentes</p>
+                  <h3 className="heading-md text-primary">{emergencyTitle || 'Atendimento de Emergência'}</h3>
+                  <p className="text-muted-foreground">{emergencySubtitle || 'Disponível 24h para casos urgentes'}</p>
                 </div>
               </div>
               <Button 

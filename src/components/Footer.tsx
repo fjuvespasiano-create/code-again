@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import { 
   Phone, 
   Mail, 
@@ -11,6 +12,15 @@ import {
 } from 'lucide-react';
 
 const Footer = () => {
+  const companyName = useSiteContent('footer_company_name');
+  const tagline = useSiteContent('footer_company_tagline');
+  const description = useSiteContent('footer_description');
+  const phone = useSiteContent('footer_phone');
+  const email = useSiteContent('footer_email');
+  const address = useSiteContent('footer_address');
+  const copyright = useSiteContent('footer_copyright');
+  const engineer = useSiteContent('footer_engineer');
+  const emergencyTitle = useSiteContent('footer_emergency_title');
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -56,12 +66,12 @@ const Footer = () => {
                 <span className="text-primary font-bold text-xl">A+</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">A+ ENGENHARIA</h3>
-                <p className="text-sm opacity-80">Segurança Ocupacional</p>
+                <h3 className="font-bold text-lg">{companyName || 'A+ ENGENHARIA'}</h3>
+                <p className="text-sm opacity-80">{tagline || 'Segurança Ocupacional'}</p>
               </div>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              Soluções completas em engenharia e segurança do trabalho para empresas de médio e grande porte.
+              {description || 'Soluções completas em engenharia e segurança do trabalho para empresas de médio e grande porte.'}
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -143,38 +153,37 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 opacity-80" />
                 <a 
-                  href="tel:+5531999591842" 
+                  href={`tel:+55${phone?.replace(/\D/g, '') || '31999591842'}`} 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  (31) 99959-1842 (WhatsApp)
+                  {phone || '(31) 99959-1842'} (WhatsApp)
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 opacity-80" />
                 <a 
-                  href="mailto:contato@a+engenharia.com.br" 
+                  href={`mailto:${email || 'contato@a+engenharia.com.br'}`} 
                   className="text-sm opacity-80 hover:opacity-100 transition-smooth"
                 >
-                  contato@a+engenharia.com.br
+                  {email || 'contato@a+engenharia.com.br'}
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 opacity-80 mt-0.5" />
-                <span className="text-sm opacity-80">
-                  Belo Horizonte - MG<br />
-                  Atendimento em todo o Brasil
+                <span className="text-sm opacity-80" style={{ whiteSpace: 'pre-line' }}>
+                  {address || 'Belo Horizonte - MG\nAtendimento em todo o Brasil'}
                 </span>
               </div>
             </div>
             
             {/* Emergency Contact */}
             <div className="mt-6 p-4 bg-blue-500/20 rounded-lg border border-blue-500/30">
-              <p className="text-sm font-semibold mb-2">Atendimento especializado</p>
+              <p className="text-sm font-semibold mb-2">{emergencyTitle || 'Atendimento especializado'}</p>
               <a 
-                href="tel:+5531999591842"
+                href={`tel:+55${phone?.replace(/\D/g, '') || '31999591842'}`}
                 className="text-sm opacity-90 hover:opacity-100 transition-smooth"
               >
-                (31) 99959-1842 (WhatsApp)
+                {phone || '(31) 99959-1842'} (WhatsApp)
               </a>
             </div>
           </div>
@@ -187,9 +196,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm opacity-80 text-center md:text-left">
-            <p>© 2025 A+ Engenharia & Segurança Ocupacional. Todos os direitos reservados.</p>
+            <p>{copyright || '© 2025 A+ Engenharia & Segurança Ocupacional. Todos os direitos reservados.'}</p>
             <p className="mt-1">
-              Andreson Marques – Eng. Mecânico e Eng. Segurança do Trabalho
+              {engineer || 'Andreson Marques – Eng. Mecânico e Eng. Segurança do Trabalho'}
             </p>
           </div>
           

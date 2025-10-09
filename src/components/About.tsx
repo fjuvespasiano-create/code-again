@@ -1,33 +1,43 @@
+import { useSiteContent } from '@/hooks/useSiteContent';
+
 const About = () => {
+  const title = useSiteContent('about_title');
+  const subtitle = useSiteContent('about_subtitle');
+  const intro = useSiteContent('about_intro');
+  const history = useSiteContent('about_history');
+  const evolution = useSiteContent('about_evolution');
+  const mission = useSiteContent('about_mission');
+  const image = useSiteContent('about_image');
+
   return (
     <section id="sobre" className="py-16 px-4">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+              src={image || "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"}
               alt="Equipe profissional de engenharia em reunião"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
           <div className="space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold">Quem Somos</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">{title || 'Quem Somos'}</h2>
             <p className="text-lg text-muted-foreground">
-              Desde 2016, a A+ Engenharia e Segurança Ocupacional oferece soluções técnicas especializadas em sistemas de proteção contra quedas em altura, atendendo diversos setores com inovação e qualidade.
+              {intro || 'Desde 2016, a A+ Engenharia e Segurança Ocupacional oferece soluções técnicas especializadas em sistemas de proteção contra quedas em altura, atendendo diversos setores com inovação e qualidade.'}
             </p>
             
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Nossa História e Missão</h3>
+              <h3 className="text-xl font-semibold">{subtitle || 'Nossa História e Missão'}</h3>
               <p className="text-muted-foreground">
-                A história da A+ Engenharia teve início em 2016, com o propósito de atender à crescente demanda do setor da construção civil por soluções técnicas voltadas ao dimensionamento de Linhas de Vida e demais sistemas de proteção contra quedas em altura.
+                {history || 'A história da A+ Engenharia teve início em 2016, com o propósito de atender à crescente demanda do setor da construção civil por soluções técnicas voltadas ao dimensionamento de Linhas de Vida e demais sistemas de proteção contra quedas em altura.'}
               </p>
               <p className="text-muted-foreground">
-                Evoluímos e expandimos nosso conhecimento técnico, permitindo atuar em outros segmentos como mineração, transporte, varejo e condomínios residenciais. Hoje, contamos com um portfólio diversificado e constantemente atualizado.
+                {evolution || 'Evoluímos e expandimos nosso conhecimento técnico, permitindo atuar em outros segmentos como mineração, transporte, varejo e condomínios residenciais. Hoje, contamos com um portfólio diversificado e constantemente atualizado.'}
               </p>
               <div className="bg-primary/10 p-6 rounded-lg border-l-4 border-primary">
                 <p className="font-semibold mb-2">Missão:</p>
                 <p className="text-muted-foreground">
-                  Proteger vidas por meio de soluções técnicas inteligentes e eficazes em engenharia de segurança, promovendo ambientes de trabalho mais seguros, eficientes e alinhados às normas vigentes.
+                  {mission || 'Proteger vidas por meio de soluções técnicas inteligentes e eficazes em engenharia de segurança, promovendo ambientes de trabalho mais seguros, eficientes e alinhados às normas vigentes.'}
                 </p>
               </div>
             </div>

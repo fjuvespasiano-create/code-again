@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import { 
   HardHat, 
   Mountain, 
@@ -9,6 +10,12 @@ import {
 } from 'lucide-react';
 
 const Specializations = () => {
+  const title = useSiteContent('specializations_title');
+  const consultingTitle = useSiteContent('specializations_consulting_title');
+  const protectionTitle = useSiteContent('specializations_protection_title');
+  const engineeringTitle = useSiteContent('specializations_engineering_title');
+  const consultingImage = useSiteContent('specializations_image_consulting');
+  const protectionImage = useSiteContent('specializations_image_protection');
   const consultingServices = [
     {
       icon: Mountain,
@@ -47,13 +54,13 @@ const Specializations = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="heading-xl text-foreground mb-4">Áreas de Especialização</h2>
+          <h2 className="heading-xl text-foreground mb-4">{title || 'Áreas de Especialização'}</h2>
         </div>
 
         <div className="space-y-16">
           {/* Consultoria em Segurança do Trabalho */}
           <div>
-            <h3 className="heading-lg text-foreground mb-8">Consultoria em Segurança do Trabalho</h3>
+            <h3 className="heading-lg text-foreground mb-8">{consultingTitle || 'Consultoria em Segurança do Trabalho'}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {consultingServices.map((service, index) => (
                 <Card key={index} className="gradient-card border-0 shadow-card hover:shadow-card-hover transition-smooth">
@@ -72,7 +79,7 @@ const Specializations = () => {
             
             <div className="mt-8 rounded-2xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+                src={consultingImage || "https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"}
                 alt="Trabalhadores da construção usando capacetes e equipamentos de segurança"
                 className="w-full h-[400px] object-cover"
               />
@@ -81,7 +88,7 @@ const Specializations = () => {
 
           {/* Projetos de Proteção e Adequação */}
           <div>
-            <h3 className="heading-lg text-foreground mb-8">Projetos de Proteção e Adequação</h3>
+            <h3 className="heading-lg text-foreground mb-8">{protectionTitle || 'Projetos de Proteção e Adequação'}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {protectionServices.map((service, index) => (
                 <Card key={index} className="gradient-card border-0 shadow-card hover:shadow-card-hover transition-smooth">
@@ -100,7 +107,7 @@ const Specializations = () => {
             
             <div className="mt-8 rounded-2xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+                src={protectionImage || "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"}
                 alt="Maquinário industrial com sistemas de segurança"
                 className="w-full h-[400px] object-cover"
               />
@@ -109,7 +116,7 @@ const Specializations = () => {
 
           {/* Engenharia Estrutural e Mecânica */}
           <div>
-            <h3 className="heading-lg text-foreground mb-8">Engenharia Estrutural e Mecânica</h3>
+            <h3 className="heading-lg text-foreground mb-8">{engineeringTitle || 'Engenharia Estrutural e Mecânica'}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {engineeringServices.map((service, index) => (
                 <Card key={index} className="gradient-card border-0 shadow-card hover:shadow-card-hover transition-smooth">

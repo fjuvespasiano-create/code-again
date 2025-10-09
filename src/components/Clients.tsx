@@ -2,11 +2,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import epoLogo from '@/assets/clients/epo-logo.png';
 import phvLogo from '@/assets/clients/phv-logo-new.jpg';
 import valeLogo from '@/assets/clients/vale-logo-new.png';
-import terrabelLogo from '@/assets/clients/terrabel-logo.png';
-import sesiLogo from '@/assets/clients/sesi-logo.png';
-import sadaLogo from '@/assets/clients/sada-logo.png';
+import terrabelLogo from '@/assets/clients/terrabel-logo-new.jpg';
+import sesiLogo from '@/assets/clients/sesi-logo-new.jpg';
+import sadaLogo from '@/assets/clients/sada-logo-new.png';
 import agmarLogo from '@/assets/clients/agmar-logo-new.png';
-import caparaoLogo from '@/assets/clients/caparao-logo.png';
+import caparaoLogo from '@/assets/clients/caparao-logo-new.jpg';
+import prodomoLogo from '@/assets/clients/prodomo-logo.png';
 
 const Clients = () => {
   const clients = [
@@ -49,6 +50,11 @@ const Clients = () => {
       name: 'Construtora Caparaó',
       sector: '67 Anos - Construção Civil',
       logo: caparaoLogo
+    },
+    {
+      name: 'Pro Domo Construtora',
+      sector: 'Construção Civil',
+      logo: prodomoLogo
     }
   ];
 

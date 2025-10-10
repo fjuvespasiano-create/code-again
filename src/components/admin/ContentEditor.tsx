@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Save, Upload, Loader2 } from 'lucide-react';
+import { z } from 'zod';
 
 interface ContentItem {
   id: string;
@@ -22,6 +23,15 @@ interface ContentEditorProps {
   content: ContentItem[];
   onContentUpdated: () => void;
 }
+
+// Validation schemas
+const textSchema = z.string().trim().min(1, "Campo não pode estar vazio").max(5000, "Texto muito longo (máximo 5000 caracteres)");
+const imageFileSchema = z.custom<File>((file) => {
+  if (!(file instanceof File)) return false;
+  const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+  const maxSize = 10 * 1024 * 1024; // 10MB
+  return validTypes.includes(file.type) && file.size <= maxSize;
+}, "Arquivo inválido. Use JPG, PNG, WEBP ou GIF (máx. 10MB)");
 
 const ContentEditor = ({ content, onContentUpdated }: ContentEditorProps) => {
   const [editedContent, setEditedContent] = useState<Record<string, string>>({});
@@ -53,9 +63,21 @@ const ContentEditor = ({ content, onContentUpdated }: ContentEditorProps) => {
     setSaving(prev => ({ ...prev, [item.content_key]: true }));
     const newValue = editedContent[item.content_key] ?? item.value;
 
+    // Validate text input
+    const validation = textSchema.safeParse(newValue);
+    if (!validation.success) {
+      toast({
+        title: "Erro de validação",
+        description: validation.error.issues[0].message,
+        variant: "destructive",
+      });
+      setSaving(prev => ({ ...prev, [item.content_key]: false }));
+      return;
+    }
+
     const { error } = await supabase
       .from('site_content')
-      .update({ value: newValue })
+      .update({ value: validation.data })
       .eq('id', item.id);
 
     if (error) {
@@ -82,8 +104,22 @@ const ContentEditor = ({ content, onContentUpdated }: ContentEditorProps) => {
   const handleImageUpload = async (item: ContentItem, file: File) => {
     setUploading(prev => ({ ...prev, [item.content_key]: true }));
 
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${item.content_key}-${Date.now()}.${fileExt}`;
+    // Validate image file
+    const validation = imageFileSchema.safeParse(file);
+    if (!validation.success) {
+      toast({
+        title: "Erro de validação",
+        description: validation.error.issues[0].message,
+        variant: "destructive",
+      });
+      setUploading(prev => ({ ...prev, [item.content_key]: false }));
+      return;
+    }
+
+    // Sanitize filename
+    const fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+    const sanitizedKey = item.content_key.replace(/[^a-zA-Z0-9_-]/g, '_');
+    const fileName = `${sanitizedKey}-${Date.now()}.${fileExt}`;
     const filePath = `${fileName}`;
 
     const { error: uploadError } = await supabase.storage

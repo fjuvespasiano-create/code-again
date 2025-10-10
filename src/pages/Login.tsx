@@ -8,6 +8,13 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { z } from 'zod';
+
+// Validation schemas
+const loginSchema = z.object({
+  email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
+  password: z.string().min(6, "Senha deve ter no mínimo 6 caracteres").max(72, "Senha muito longa")
+});
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,7 +38,19 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    const { data, error } = await signIn(email, password);
+    // Validate input
+    const validation = loginSchema.safeParse({ email, password });
+    if (!validation.success) {
+      toast({
+        title: "Erro de validação",
+        description: validation.error.issues[0].message,
+        variant: "destructive",
+      });
+      setLoading(false);
+      return;
+    }
+
+    const { data, error } = await signIn(validation.data.email, validation.data.password);
 
     if (error) {
       toast({

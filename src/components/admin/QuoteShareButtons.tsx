@@ -34,23 +34,62 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
       const pageWidth = doc.internal.pageSize.getWidth();
       let yPos = 20;
 
-      // Header - Company Info
-      doc.setFontSize(20);
+      // Add company logo if available
+      if (company?.logo_url) {
+        try {
+          const response = await fetch(company.logo_url);
+          const blob = await response.blob();
+          const reader = new FileReader();
+          
+          await new Promise((resolve) => {
+            reader.onloadend = () => {
+              const base64data = reader.result as string;
+              doc.addImage(base64data, 'PNG', 20, yPos, 40, 40);
+              resolve(true);
+            };
+            reader.readAsDataURL(blob);
+          });
+          
+          yPos += 45;
+        } catch (error) {
+          console.error('Erro ao carregar logo:', error);
+        }
+      }
+      // Header - Company Info (Emissor)
+      doc.setFontSize(12);
+      doc.setFont(undefined, 'bold');
       doc.setTextColor(0, 102, 204);
-      doc.text(company?.company_name || 'A+ Engenharia', pageWidth / 2, yPos, { align: 'center' });
+      doc.text('EMPRESA EMISSORA', 20, yPos);
+      
+      yPos += 8;
+      doc.setFontSize(14);
+      doc.setTextColor(0);
+      doc.text(company?.company_name || 'A+ Engenharia', 20, yPos);
+      
+      yPos += 7;
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(60);
+      
+      if (company?.cnpj) {
+        doc.text(`CNPJ: ${company.cnpj}`, 20, yPos);
+        yPos += 5;
+      }
+      if (company?.address) {
+        const addressLines = doc.splitTextToSize(`Endereço: ${company.address}`, 90);
+        doc.text(addressLines, 20, yPos);
+        yPos += (addressLines.length * 5);
+      }
+      if (company?.phone) {
+        doc.text(`Telefone: ${company.phone}`, 20, yPos);
+        yPos += 5;
+      }
+      if (company?.email) {
+        doc.text(`Email: ${company.email}`, 20, yPos);
+        yPos += 5;
+      }
       
       yPos += 10;
-      doc.setFontSize(10);
-      doc.setTextColor(100);
-      if (company?.phone) doc.text(`Tel: ${company.phone}`, pageWidth / 2, yPos, { align: 'center' });
-      yPos += 5;
-      if (company?.email) doc.text(`Email: ${company.email}`, pageWidth / 2, yPos, { align: 'center' });
-      yPos += 5;
-      if (company?.address) doc.text(company.address, pageWidth / 2, yPos, { align: 'center' });
-      yPos += 5;
-      if (company?.cnpj) doc.text(`CNPJ: ${company.cnpj}`, pageWidth / 2, yPos, { align: 'center' });
-      
-      yPos += 15;
       
       // Quote Info
       doc.setFontSize(16);
@@ -68,31 +107,36 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
       
       yPos += 10;
       
-      // Client Info
+      // Client Info (Destinatário)
       doc.setFontSize(12);
       doc.setFont(undefined, 'bold');
-      doc.text('DADOS DO CLIENTE', 20, yPos);
-      doc.setFont(undefined, 'normal');
+      doc.setTextColor(0, 102, 204);
+      doc.text('CLIENTE / DESTINATÁRIO', 20, yPos);
+      
+      yPos += 8;
+      doc.setFontSize(12);
+      doc.setTextColor(0);
+      doc.text(quote.client_name, 20, yPos);
       
       yPos += 7;
       doc.setFontSize(10);
-      doc.text(`Nome: ${quote.client_name}`, 20, yPos);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(60);
       
-      if (quote.client_email) {
-        yPos += 5;
-        doc.text(`Email: ${quote.client_email}`, 20, yPos);
+      if (quote.client_address) {
+        const addressLines = doc.splitTextToSize(`Endereço: ${quote.client_address}`, 90);
+        doc.text(addressLines, 20, yPos);
+        yPos += (addressLines.length * 5);
       }
       
       if (quote.client_phone) {
-        yPos += 5;
         doc.text(`Telefone: ${quote.client_phone}`, 20, yPos);
+        yPos += 5;
       }
       
-      if (quote.client_address) {
+      if (quote.client_email) {
+        doc.text(`Email: ${quote.client_email}`, 20, yPos);
         yPos += 5;
-        const addressLines = doc.splitTextToSize(`Endereço: ${quote.client_address}`, pageWidth - 40);
-        doc.text(addressLines, 20, yPos);
-        yPos += (addressLines.length * 5);
       }
       
       yPos += 10;

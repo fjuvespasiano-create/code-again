@@ -10,6 +10,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, LogOut } from 'lucide-react';
 import ContentEditor from '@/components/admin/ContentEditor';
+import CompanyInfo from '@/components/admin/CompanyInfo';
+import QuoteManager from '@/components/admin/QuoteManager';
 
 interface SiteSection {
   id: string;
@@ -200,10 +202,12 @@ const Admin = () => {
         </div>
 
         <Tabs defaultValue="sections" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="sections">Seções</TabsTrigger>
             <TabsTrigger value="services">Serviços</TabsTrigger>
             <TabsTrigger value="content">Conteúdo</TabsTrigger>
+            <TabsTrigger value="company">Empresa</TabsTrigger>
+            <TabsTrigger value="quotes">Orçamentos</TabsTrigger>
           </TabsList>
 
           <TabsContent value="sections" className="mt-6">
@@ -260,6 +264,14 @@ const Admin = () => {
 
           <TabsContent value="content" className="mt-6">
             <ContentEditor content={siteContent} onContentUpdated={loadSiteContent} />
+          </TabsContent>
+
+          <TabsContent value="company" className="mt-6">
+            <CompanyInfo />
+          </TabsContent>
+
+          <TabsContent value="quotes" className="mt-6">
+            <QuoteManager />
           </TabsContent>
         </Tabs>
 

@@ -14,6 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
+      company_info: {
+        Row: {
+          address: string | null
+          cnpj: string | null
+          company_name: string
+          created_at: string
+          email: string
+          id: string
+          logo_url: string | null
+          phone: string
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          cnpj?: string | null
+          company_name: string
+          created_at?: string
+          email: string
+          id?: string
+          logo_url?: string | null
+          phone: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          cnpj?: string | null
+          company_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          logo_url?: string | null
+          phone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      quotes: {
+        Row: {
+          client_address: string | null
+          client_email: string | null
+          client_name: string
+          client_phone: string | null
+          created_at: string
+          created_by: string | null
+          id: string
+          items: Json
+          notes: string | null
+          quote_number: string
+          service_description: string
+          status: string
+          total_value: number
+          updated_at: string
+          valid_until: string | null
+        }
+        Insert: {
+          client_address?: string | null
+          client_email?: string | null
+          client_name: string
+          client_phone?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          items?: Json
+          notes?: string | null
+          quote_number: string
+          service_description: string
+          status?: string
+          total_value: number
+          updated_at?: string
+          valid_until?: string | null
+        }
+        Update: {
+          client_address?: string | null
+          client_email?: string | null
+          client_name?: string
+          client_phone?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          items?: Json
+          notes?: string | null
+          quote_number?: string
+          service_description?: string
+          status?: string
+          total_value?: number
+          updated_at?: string
+          valid_until?: string | null
+        }
+        Relationships: []
+      }
       services: {
         Row: {
           created_at: string

@@ -2,8 +2,11 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, ChevronRight } from 'lucide-react';
+import { useSiteContent } from '@/hooks/useSiteContent';
 
 const Blog = () => {
+  const title = useSiteContent('blog_title');
+  const subtitle = useSiteContent('blog_subtitle');
   const posts = [
     {
       id: 1,
@@ -35,9 +38,9 @@ const Blog = () => {
     <section id="blog" className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Blog & Insights</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">{title || 'Blog & Insights'}</h2>
           <p className="text-lg text-muted-foreground">
-            Fique atualizado com as últimas tendências em segurança do trabalho e engenharia industrial.
+            {subtitle || 'Fique atualizado com as últimas tendências em segurança do trabalho e engenharia industrial.'}
           </p>
         </div>
 

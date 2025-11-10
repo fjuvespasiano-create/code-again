@@ -1,20 +1,31 @@
+import { useSiteContent } from '@/hooks/useSiteContent';
+
 const Stats = () => {
+  const stat1Number = useSiteContent('stats_1_number');
+  const stat1Label = useSiteContent('stats_1_label');
+  const stat2Number = useSiteContent('stats_2_number');
+  const stat2Label = useSiteContent('stats_2_label');
+  const stat3Number = useSiteContent('stats_3_number');
+  const stat3Label = useSiteContent('stats_3_label');
+  const stat4Number = useSiteContent('stats_4_number');
+  const stat4Label = useSiteContent('stats_4_label');
+  
   const stats = [
     {
-      number: "50+",
-      label: "Projetos Realizados"
+      number: stat1Number || "50+",
+      label: stat1Label || "Projetos Realizados"
     },
     {
-      number: "100%",
-      label: "Conformidade NR"
+      number: stat2Number || "100%",
+      label: stat2Label || "Conformidade NR"
     },
     {
-      number: "24/7",
-      label: "Suporte Técnico"
+      number: stat3Number || "24/7",
+      label: stat3Label || "Suporte Técnico"
     },
     {
-      number: "5★",
-      label: "Avaliação Média"
+      number: stat4Number || "5★",
+      label: stat4Label || "Avaliação Média"
     }
   ];
 

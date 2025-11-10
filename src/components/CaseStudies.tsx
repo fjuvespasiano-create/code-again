@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import { 
   Building2, 
   Factory, 
@@ -17,6 +18,12 @@ import construcaoLajeEstrutura from '@/assets/projects/construcao-laje-estrutura
 import treinamentoNR12Pratico1 from '@/assets/projects/treinamento-nr12-pratico-1.jpg';
 
 const CaseStudies = () => {
+  const title = useSiteContent('case_studies_title');
+  const subtitle = useSiteContent('case_studies_subtitle');
+  const ctaTitle = useSiteContent('case_studies_cta_title');
+  const ctaSubtitle = useSiteContent('case_studies_cta_subtitle');
+  const ctaButton = useSiteContent('case_studies_cta_button');
+  
   const cases = [
     {
       id: 1,
@@ -123,10 +130,9 @@ const CaseStudies = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Casos de Sucesso</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">{title || 'Casos de Sucesso'}</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Conheça alguns dos projetos que desenvolvemos, demonstrando nossa expertise técnica 
-            e capacidade de entregar soluções eficazes em diferentes setores.
+            {subtitle || 'Conheça alguns dos projetos que desenvolvemos, demonstrando nossa expertise técnica e capacidade de entregar soluções eficazes em diferentes setores.'}
           </p>
         </div>
 
@@ -220,13 +226,12 @@ const CaseStudies = () => {
         <div className="text-center mt-16">
           <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
             <CardContent className="pt-8">
-              <h3 className="text-2xl font-bold mb-4">Seu Projeto Pode Ser o Próximo</h3>
+              <h3 className="text-2xl font-bold mb-4">{ctaTitle || 'Seu Projeto Pode Ser o Próximo'}</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Entre em contato conosco e descubra como podemos desenvolver uma solução 
-                personalizada para as necessidades específicas da sua empresa.
+                {ctaSubtitle || 'Entre em contato conosco e descubra como podemos desenvolver uma solução personalizada para as necessidades específicas da sua empresa.'}
               </p>
               <Button className="gradient-primary text-white px-8 py-3">
-                Solicitar Consultoria Gratuita
+                {ctaButton || 'Solicitar Consultoria Gratuita'}
               </Button>
             </CardContent>
           </Card>

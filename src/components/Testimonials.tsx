@@ -1,7 +1,10 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
+import { useSiteContent } from '@/hooks/useSiteContent';
 
 const Testimonials = () => {
+  const title = useSiteContent('testimonials_title');
+  const subtitle = useSiteContent('testimonials_subtitle');
   const testimonials = [
     {
       id: 1,
@@ -27,9 +30,9 @@ const Testimonials = () => {
     <section id="testimonials" className="py-16 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">O Que Nossos Clientes Dizem</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">{title || 'O Que Nossos Clientes Dizem'}</h2>
           <p className="text-lg text-muted-foreground">
-            Empresas que confiam na A+ Engenharia para suas necessidades de segurança e engenharia.
+            {subtitle || 'Empresas que confiam na A+ Engenharia para suas necessidades de segurança e engenharia.'}
           </p>
         </div>
 

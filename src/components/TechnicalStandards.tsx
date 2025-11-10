@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import { 
   Shield, 
   FileText, 
@@ -14,6 +15,9 @@ import {
 import { Button } from '@/components/ui/button';
 
 const TechnicalStandards = () => {
+  const title = useSiteContent('technical_standards_title');
+  const subtitle = useSiteContent('technical_standards_subtitle');
+  const processTitle = useSiteContent('technical_standards_process_title');
   const standards = [
     {
       id: 'NR-35',
@@ -71,10 +75,9 @@ const TechnicalStandards = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Conformidade Regulatória</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">{title || 'Conformidade Regulatória'}</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Atuamos em total conformidade com as Normas Regulamentadoras do Ministério do Trabalho e normas técnicas ABNT, 
-            garantindo a segurança e legalidade de todos os projetos.
+            {subtitle || 'Atuamos em total conformidade com as Normas Regulamentadoras do Ministério do Trabalho e normas técnicas ABNT, garantindo a segurança e legalidade de todos os projetos.'}
           </p>
         </div>
 
@@ -167,7 +170,7 @@ const TechnicalStandards = () => {
 
         {/* Processo de Trabalho */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-8">Processo de Conformidade</h3>
+          <h3 className="text-2xl font-bold mb-8">{processTitle || 'Processo de Conformidade'}</h3>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="space-y-3">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto">

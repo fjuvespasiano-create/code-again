@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useSiteContent } from '@/hooks/useSiteContent';
 import treinamentoNR12Teorico from '@/assets/projects/treinamento-nr12-teorico.jpg';
 import treinamentoNR12Pratico1 from '@/assets/projects/treinamento-nr12-pratico-1.jpg';
 import treinamentoNR12Pratico2 from '@/assets/projects/treinamento-nr12-pratico-2.jpg';
@@ -26,6 +27,8 @@ import testeCargaEquipamentoTripé from '@/assets/projects/teste-carga-equipamen
 import linhaVidaLaje from '@/assets/projects/linha-vida-laje.jpg';
 
 const Gallery = () => {
+  const title = useSiteContent('gallery_title');
+  const subtitle = useSiteContent('gallery_subtitle');
   const [activeFilter, setActiveFilter] = useState('todos');
 
   const filters = [
@@ -193,9 +196,9 @@ const Gallery = () => {
     <section id="galeria" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="heading-xl text-foreground mb-4">Galeria de Projetos</h2>
+          <h2 className="heading-xl text-foreground mb-4">{title || 'Galeria de Projetos'}</h2>
           <p className="body-lg text-muted-foreground">
-            Conheça alguns dos nossos principais trabalhos em engenharia e segurança ocupacional
+            {subtitle || 'Conheça alguns dos nossos principais trabalhos em engenharia e segurança ocupacional'}
           </p>
         </div>
 

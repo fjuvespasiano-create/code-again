@@ -37,22 +37,37 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
       // Add company logo if available
       if (company?.logo_url) {
         try {
-          const response = await fetch(company.logo_url);
+          // Handle relative URLs by prepending the origin
+          const logoUrl = company.logo_url.startsWith('http') 
+            ? company.logo_url 
+            : `${window.location.origin}${company.logo_url}`;
+          
+          const response = await fetch(logoUrl);
+          if (!response.ok) throw new Error('Failed to fetch logo');
+          
           const blob = await response.blob();
           const reader = new FileReader();
           
-          await new Promise((resolve) => {
+          await new Promise((resolve, reject) => {
             reader.onloadend = () => {
-              const base64data = reader.result as string;
-              doc.addImage(base64data, 'PNG', 20, yPos, 40, 40);
-              resolve(true);
+              try {
+                const base64data = reader.result as string;
+                // Detect image format from base64 string
+                const format = base64data.includes('image/png') ? 'PNG' : 'JPEG';
+                doc.addImage(base64data, format, 20, yPos, 40, 40);
+                resolve(true);
+              } catch (error) {
+                reject(error);
+              }
             };
+            reader.onerror = () => reject(new Error('Failed to read image'));
             reader.readAsDataURL(blob);
           });
           
           yPos += 45;
         } catch (error) {
           console.error('Erro ao carregar logo:', error);
+          // Continue without logo if it fails to load
         }
       }
       // Header - Company Info (Emissor)

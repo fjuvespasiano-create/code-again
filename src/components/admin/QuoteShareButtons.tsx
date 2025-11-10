@@ -56,9 +56,9 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
         }
       }
       // Header - Company Info (Emissor)
-      doc.setFontSize(12);
+      doc.setFontSize(11);
       doc.setFont(undefined, 'bold');
-      doc.setTextColor(0, 102, 204);
+      doc.setTextColor(0, 102, 204); // Cor primária A+
       doc.text('EMPRESA EMISSORA', 20, yPos);
       
       yPos += 8;
@@ -91,18 +91,21 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
       
       yPos += 10;
       
-      // Quote Info
-      doc.setFontSize(16);
-      doc.setTextColor(0);
-      doc.text(`ORÇAMENTO Nº ${quote.quote_number}`, 20, yPos);
+      // Quote Info - Título do Orçamento
+      doc.setFontSize(18);
+      doc.setFont(undefined, 'bold');
+      doc.setTextColor(0, 102, 204); // Cor primária A+
+      doc.text(`ORÇAMENTO Nº ${quote.quote_number}`, pageWidth / 2, yPos, { align: 'center' });
       
       yPos += 10;
       doc.setFontSize(10);
-      doc.text(`Data: ${new Date(quote.created_at).toLocaleDateString('pt-BR')}`, 20, yPos);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(80);
+      doc.text(`Data de Emissão: ${new Date(quote.created_at).toLocaleDateString('pt-BR')}`, pageWidth / 2, yPos, { align: 'center' });
       
       if (quote.valid_until) {
         yPos += 5;
-        doc.text(`Válido até: ${new Date(quote.valid_until).toLocaleDateString('pt-BR')}`, 20, yPos);
+        doc.text(`Validade: ${new Date(quote.valid_until).toLocaleDateString('pt-BR')}`, pageWidth / 2, yPos, { align: 'center' });
       }
       
       yPos += 10;
@@ -142,13 +145,15 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
       yPos += 10;
       
       // Service Description
-      doc.setFontSize(12);
+      doc.setFontSize(11);
       doc.setFont(undefined, 'bold');
+      doc.setTextColor(0, 102, 204); // Cor primária A+
       doc.text('DESCRIÇÃO DO SERVIÇO', 20, yPos);
-      doc.setFont(undefined, 'normal');
       
       yPos += 7;
       doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(60);
       const serviceLines = doc.splitTextToSize(quote.service_description, pageWidth - 40);
       doc.text(serviceLines, 20, yPos);
       yPos += (serviceLines.length * 5) + 10;
@@ -166,13 +171,33 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
           `R$ ${item.total.toFixed(2)}`
         ]);
         
+        // Título da tabela
+        doc.setFontSize(11);
+        doc.setFont(undefined, 'bold');
+        doc.setTextColor(0, 102, 204);
+        doc.text('ITENS DO ORÇAMENTO', 20, yPos);
+        yPos += 7;
+        
         autoTable(doc, {
           startY: yPos,
           head: [['Descrição', 'Qtd', 'Valor Unit.', 'Total']],
           body: tableData,
-          theme: 'grid',
-          headStyles: { fillColor: [0, 102, 204] },
-          styles: { fontSize: 9 },
+          theme: 'striped',
+          headStyles: { 
+            fillColor: [0, 102, 204], // Cor primária A+
+            textColor: [255, 255, 255],
+            fontStyle: 'bold',
+            halign: 'center'
+          },
+          styles: {
+            fontSize: 9,
+            cellPadding: 4,
+            lineColor: [200, 200, 200],
+            lineWidth: 0.1
+          },
+          alternateRowStyles: {
+            fillColor: [245, 247, 250]
+          },
           columnStyles: {
             0: { cellWidth: 'auto' },
             1: { cellWidth: 30, halign: 'center' },
@@ -184,23 +209,63 @@ const QuoteShareButtons = ({ quoteId }: QuoteShareButtonsProps) => {
         yPos = (doc as any).lastAutoTable.finalY + 10;
       }
       
-      // Total
-      doc.setFontSize(14);
+      // Total com destaque
+      // Caixa de destaque para o total
+      doc.setFillColor(0, 102, 204); // Cor primária A+
+      doc.rect(pageWidth - 90, yPos - 5, 70, 12, 'F');
+      
+      doc.setFontSize(12);
       doc.setFont(undefined, 'bold');
-      doc.text(`VALOR TOTAL: R$ ${quote.total_value.toFixed(2)}`, pageWidth - 20, yPos, { align: 'right' });
+      doc.setTextColor(255, 255, 255); // Branco
+      doc.text(
+        `TOTAL: R$ ${quote.total_value.toFixed(2)}`, 
+        pageWidth - 55, 
+        yPos + 3, 
+        { align: 'center' }
+      );
       
       // Notes
       if (quote.notes) {
         yPos += 15;
-        doc.setFontSize(12);
+        doc.setFontSize(11);
+        doc.setFont(undefined, 'bold');
+        doc.setTextColor(0, 102, 204); // Cor primária A+
         doc.text('OBSERVAÇÕES', 20, yPos);
-        doc.setFont(undefined, 'normal');
         
         yPos += 7;
-        doc.setFontSize(10);
+        doc.setFontSize(9);
+        doc.setFont(undefined, 'normal');
+        doc.setTextColor(80);
         const notesLines = doc.splitTextToSize(quote.notes, pageWidth - 40);
         doc.text(notesLines, 20, yPos);
+        yPos += (notesLines.length * 5);
       }
+      
+      // Footer com linha separadora
+      const footerY = doc.internal.pageSize.getHeight() - 25;
+      
+      // Linha divisória
+      doc.setDrawColor(0, 102, 204); // Cor primária A+
+      doc.setLineWidth(0.5);
+      doc.line(20, footerY - 5, pageWidth - 20, footerY - 5);
+      
+      doc.setFontSize(8);
+      doc.setTextColor(120);
+      doc.setFont(undefined, 'italic');
+      doc.text(
+        'Este orçamento tem validade conforme data especificada acima.',
+        pageWidth / 2,
+        footerY,
+        { align: 'center' }
+      );
+      
+      doc.setFont(undefined, 'normal');
+      doc.text(
+        `${company?.company_name || 'A+ Engenharia'} | ${company?.phone || ''} | ${company?.email || ''}`,
+        pageWidth / 2,
+        footerY + 5,
+        { align: 'center' }
+      );
       
       // Save PDF
       doc.save(`Orcamento_${quote.quote_number}.pdf`);

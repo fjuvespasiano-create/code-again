@@ -12,6 +12,7 @@ import { Loader2, LogOut } from 'lucide-react';
 import ContentEditor from '@/components/admin/ContentEditor';
 import CompanyInfo from '@/components/admin/CompanyInfo';
 import QuoteManager from '@/components/admin/QuoteManager';
+import { BlogManager } from '@/components/admin/BlogManager';
 
 interface SiteSection {
   id: string;
@@ -202,12 +203,13 @@ const Admin = () => {
         </div>
 
         <Tabs defaultValue="sections" className="w-full">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-6">
             <TabsTrigger value="sections">Seções</TabsTrigger>
             <TabsTrigger value="services">Serviços</TabsTrigger>
             <TabsTrigger value="content">Conteúdo</TabsTrigger>
             <TabsTrigger value="company">Empresa</TabsTrigger>
             <TabsTrigger value="quotes">Orçamentos</TabsTrigger>
+            <TabsTrigger value="blog">Blog</TabsTrigger>
           </TabsList>
 
           <TabsContent value="sections" className="mt-6">
@@ -272,6 +274,10 @@ const Admin = () => {
 
           <TabsContent value="quotes" className="mt-6">
             <QuoteManager />
+          </TabsContent>
+
+          <TabsContent value="blog" className="mt-6">
+            <BlogManager />
           </TabsContent>
         </Tabs>
 

@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, LogIn } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useSiteContent } from '@/hooks/useSiteContent';
-import heroEngineers from '@/assets/hero-engineers.png';
+import heroEngineers from '@/assets/hero-safety-engineers.jpg';
 
 const Hero = () => {
   const navigate = useNavigate();

@@ -1,4 +1,5 @@
 import { useSiteContent } from '@/hooks/useSiteContent';
+import aboutTeamImage from '@/assets/about-engineering-team.jpg';
 
 const About = () => {
   const title = useSiteContent('about_title');
@@ -15,7 +16,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src={image || "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"}
+              src={image || aboutTeamImage}
               alt="Equipe profissional de engenharia em reunião"
               className="w-full h-auto rounded-lg shadow-lg"
             />
